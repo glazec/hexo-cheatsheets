@@ -1,14 +1,9 @@
 <article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
   <div class='body-area'>
     <header class='main-heading -center' role='banner'>
-      <h1 class='h1'> <%= post.title %> <em><%= post.excerpt %></em></h1>
+      <h1 class='h1'> <%= post.title %> <em><%= post.version %></em></h1>
     </header>
   
-    <% if (post.excerpt){ %>
-      <div class='intro-content MarkdownBody -wrapified'>
-        <%= page.intro | markdownify %>
-      </div>
-      <% } %>
   
     <main class='post-content MarkdownBody' data-js-main-body data-js-anchors role='main'>
       <%- post.content %>
@@ -26,3 +21,4 @@
   </div>
 </section>
 <% } %>
+<%- js(["assets/packed/vendor.js","assets/packed/app.js","assets/packed/script-glaze.js"]) %>
