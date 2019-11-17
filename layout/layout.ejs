@@ -3,17 +3,13 @@
     <%- partial('_partial/top-nav', null, {cache: !config.relative_link}) %>
   <div id="container">
     <div id="wrap">
-      <!-- <%- partial('_partial/header', null, {cache: !config.relative_link}) %> -->
       <div class="outer">
         <section id="main"><%- body %></section>
-        <!-- <% if (theme.sidebar && theme.sidebar !== 'bottom'){ %>
-          <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
-        <% } %> -->
       </div>
     </div>                
     <!-- <%- partial('_partial/mobile-nav', null, {cache: !config.relative_link}) %> -->
     <!-- <%- partial('_partial/after-footer') %> -->
   </div>
-  <%- js(["assets/packed/vendor.js","assets/packed/app.js"]) %>
+
 </body>
 </html>
