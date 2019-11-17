@@ -1,3 +1,8 @@
+/* configure prism plugin */
+// (function(){
+//   Prism.plugins.autoloader.languages_path = '/prism/prism-grammar/';
+// })();
+
 /* add class for code highlight */
 (function() {
   document.querySelectorAll("pre>code").forEach(function(node) {
