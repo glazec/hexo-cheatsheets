@@ -22,7 +22,9 @@
   }
   %>
   <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
-  
+  <% if (theme.favicon){ %>
+    <link rel="icon" href="<%- theme.favicon %>">
+  <% } %>
   <%- css("css/style",) %>
 
 </head>
