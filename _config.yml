@@ -1,2 +1,3 @@
 favicon: "/img/favicon.min.webp"
-github: https://github.com/glazec/hexo-cheatShets-demo
+github: "https://github.com/glazec/hexo-cheatsheets"
+githubToolTip: "Contribute to the theme"
