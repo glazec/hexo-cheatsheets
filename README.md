@@ -37,14 +37,10 @@ githubToolTip: "Text displayed when hovering on the github button"
 when using tht code block in the markdown, please write the language. Otherwise the highlight will not work.
 The following example is correct.
 
-````
-
-``` yml
+```
+```yml
 favicon: "favicon url"
 github: "the link the github button point to"
 githubToolTip: "Text displayed when hovering on the github button"
-````
+```·
 
-```
-
-```
