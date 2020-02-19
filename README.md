@@ -36,7 +36,7 @@ githubToolTip: "Text displayed when hovering on the github button"
 ## Writing
 
 when using tht code block in the markdown, please write the language. Otherwise the highlight will not work.
-The following example is correct.
+The following example is correct.(Please **omit** the last dot, thant is a render issue)
 
 ```
 ```yml
