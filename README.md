@@ -4,6 +4,7 @@ A new **cheatsheets** theme for Hexo.
 The design is from [devhints](http://devhints.io)
 
 - [Preview](http://cheatsheets.inevitable.tech)
+- [A post about it](https://www.inevitable.tech/posts/59f1905d/)
 
 ## Installation
 
