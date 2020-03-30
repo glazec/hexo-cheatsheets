@@ -18,6 +18,13 @@ $ git clone https://github.com/glazec/hexo-cheatsheets.git
 
 Modify `theme` setting in `_config.yml` to `hexo-cheatsheets`.
 
+Disable default code highlight plugin in `_config.yml`.
+
+```yml
+highlight:
+  enable: false
+```
+
 ### Update
 
 ```bash
