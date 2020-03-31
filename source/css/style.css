@@ -189,7 +189,7 @@ a, area, button, input, label, select, summary, textarea, [tabindex] { -ms-touch
 .-dark.push-button:hover, .-dark.push-button:focus { background: #3e3069; color: white; }
 
 /* Base */
-html, body { background: #f1f3f5; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; font-size: 14px; line-height: 1.6; color: #345; overflow-x: hidden; }
+html, body { background: #f1f3f5; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif; font-size: 14px; line-height: 1.6; color: #345; overflow-x: hidden; }
 
 body { font-size: 13px; padding: 0; margin: 0; }
 @media (min-width: 480px) and (max-width: 768px) { body { font-size: calc( 13px + 1 * ( ( 100vw - 480px) / 288 ) ); } }
@@ -197,7 +197,7 @@ body { font-size: 13px; padding: 0; margin: 0; }
 @media (min-width: 1280px) { body { font-size: 14px; } }
 
 /* Code */
-pre, code { font-family: cousine, "SFMono-Regular", Consolas, Menlo, "Liberation Mono", "Ubuntu Mono", Courier, monospace; letter-spacing: -0.03em; }
+pre, code { font-family: "等距更纱黑体 T SC", "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace; }
 
 pre { font-size: 0.96em; }
 
@@ -228,7 +228,9 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone .post-content.-wrapified,
 
 .MarkdownBody code { color: #667788; font-size: 0.96em; }
 
-.MarkdownBody pre, .MarkdownBody code { font-family: cousine, "SFMono-Regular", Consolas, Menlo, "Liberation Mono", "Ubuntu Mono", Courier, monospace; }
+.MarkdownBody h2 code, .MarkdownBody h3 code, .MarkdownBody p code, .MarkdownBody ol code, .MarkdownBody ul code { padding: 0 4px; color: #e53935; }
+
+.MarkdownBody pre, .MarkdownBody code { font-family: "等距更纱黑体 T SC", "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace; }
 
 .MarkdownBody pre.-box-chars { line-height: 1.32; }
 
@@ -414,6 +416,7 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone .post-content.-wrapified,
 @media (min-width: 481px) { .h2-section + .h2-section { margin-top: 48px; } }
 .h2-section > .anchor { opacity: 0; }
 .h2-section:hover > .anchor { opacity: 1; }
+.h2-section > pre { margin: 0; padding: 16px; border-radius:4px; box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03), 0 1px 2px rgba(102, 119, 136, 0.3); }
 
 /* H3 section */
 .h3-section > .body { /* Collapse/flush */ /* Border radius */ }
@@ -432,8 +435,10 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone .post-content.-wrapified,
 
 /* Children */
 .h3-section > .body { /* Lists */ /* Paragraphs */ /* Headings in between bodies */ /* Description paragraphs */ }
-.h3-section > .body > ul { margin: 0; padding: 0; list-style-type: none; }
+.h3-section > .body > ul { margin: 0; padding: 16px; list-style-type: none; }
+.h3-section > .body > ol { margin: 0; padding: 16px 16px 16px 32px; }
 .h3-section > .body > ul > li { padding: 8px; padding-left: 36px; position: relative; }
+.h3-section > .body > ul > li > p, .h3-section > .body > ol > li > p { margin: 0; padding: 0; }
 .h3-section > .body > ul > li > p { margin: 0; padding: 0; }
 .h3-section > .body > ul > li::before { content: ''; position: absolute; display: inline-block; width: 4px; height: 4px; background: #667788; border-radius: 50%; left: 16px; top: 18px; }
 .h3-section > .body > ul > li + li { border-top: solid 1px rgba(102, 119, 136, 0.05); }
