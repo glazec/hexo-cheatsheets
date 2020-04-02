@@ -267,7 +267,7 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone .post-content.-wrapified,
 @media (min-width: 768px) and (max-width: 1280px) { .MarkdownBody h3 { font-size: calc( 19px + 0 * ( ( 100vw - 768px) / 512 ) ); } }
 @media (min-width: 1280px) { .MarkdownBody h3 { font-size: 19px; } }
 
-.MarkdownBody a, .MarkdownBody a:visited { color: #26648e; text-decoration: none; }
+.MarkdownBody a, .MarkdownBody a:visited { color: #26648e; text-decoration: none; word-wrap: break-word; }
 .MarkdownBody a:hover { text-decoration: underline; }
 .MarkdownBody em { font-style: normal; color: #667788; }
 .MarkdownBody iframe { border: 0; margin: 0; width: 100%; }
