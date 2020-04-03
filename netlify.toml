@@ -2,7 +2,7 @@
 # All deploys from the main repository branch
 # will inherit these settings.
 [context.production]
-  command = "rm * -r;git clone https://github.com/glazec/hexo-cheatsheets-demo.git;cd hexo-cheatsheets-demo;hexo server"
+  command = "rm * -r;git clone https://github.com/glazec/hexo-cheatsheets-demo.git;cd hexo-cheatsheets-demo;npm install;npx hexo server"
   [context.production.environment]
     ACCESS_TOKEN = "super secret"
 
