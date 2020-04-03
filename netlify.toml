@@ -3,4 +3,4 @@
 # will inherit these settings.
 [context.production]
     command = "rm * -r;git clone https://github.com/glazec/hexo-cheatsheets-demo.git;cd hexo-cheatsheets-demo;npm install;npx hexo generate"
-    publish = "hexo-cheatsheets/public"
+    publish = "hexo-cheatsheets-demo/public"
