@@ -1,0 +1,6 @@
+# Production context:
+# All deploys from the main repository branch
+# will inherit these settings.
+[context.production]
+    command = "rm * -r;git clone https://github.com/glazec/hexo-cheatsheets-demo.git;cd hexo-cheatsheets-demo/themes;rm cheatsheets -r;git submodule add https://github.com/glazec/hexo-cheatsheets.git;mv hexo-cheatsheets cheatsheets;cd ../;npm install;npx hexo generate"
+    publish = "hexo-cheatsheets-demo/public"
