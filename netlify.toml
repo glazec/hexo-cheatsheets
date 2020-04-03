@@ -2,13 +2,13 @@
 # All deploys from the main repository branch
 # will inherit these settings.
 [context.production]
-    command = "export PERCY_TOKEN=$percy;rm * -r;git clone https://github.com/glazec/hexo-cheatsheets-demo.git;cd hexo-cheatsheets-demo/themes;rm cheatsheets -r;git submodule add https://github.com/glazec/hexo-cheatsheets.git;mv hexo-cheatsheets cheatsheets;cd ../;npm install;npx hexo generate;npx percy snapshot hexo-cheatsheets-demo/public"
+    command = "export PERCY_TOKEN=$percy;rm * -r;git clone https://github.com/glazec/hexo-cheatsheets-demo.git;cd hexo-cheatsheets-demo/themes;rm cheatsheets -r;git submodule add https://github.com/glazec/hexo-cheatsheets.git;mv hexo-cheatsheets cheatsheets;cd ../;npm install;npx hexo generate;npx percy snapshot public"
     publish = "hexo-cheatsheets-demo/public"
 
 [context.deploy-preview]
-    command = "export PERCY_TOKEN=$percy;rm * -r;git clone https://github.com/glazec/hexo-cheatsheets-demo.git;cd hexo-cheatsheets-demo/themes;rm cheatsheets -r;git submodule add https://github.com/glazec/hexo-cheatsheets.git;mv hexo-cheatsheets cheatsheets;cd ../;npm install;npx hexo generate;npx percy snapshot hexo-cheatsheets-demo/public"
+    command = "export PERCY_TOKEN=$percy;rm * -r;git clone https://github.com/glazec/hexo-cheatsheets-demo.git;cd hexo-cheatsheets-demo/themes;rm cheatsheets -r;git submodule add https://github.com/glazec/hexo-cheatsheets.git;mv hexo-cheatsheets cheatsheets;cd ../;npm install;npx hexo generate;npx percy snapshot public"
     publish = "hexo-cheatsheets-demo/public"
 
 [context.branch-deploy]
-    command = "export PERCY_TOKEN=$percy;rm * -r;git clone https://github.com/glazec/hexo-cheatsheets-demo.git;cd hexo-cheatsheets-demo/themes;rm cheatsheets -r;git submodule add https://github.com/glazec/hexo-cheatsheets.git;mv hexo-cheatsheets cheatsheets;cd ../;npm install;npx hexo generate;npx percy snapshot hexo-cheatsheets-demo/public"
+    command = "export PERCY_TOKEN=$percy;rm * -r;git clone https://github.com/glazec/hexo-cheatsheets-demo.git;cd hexo-cheatsheets-demo/themes;rm cheatsheets -r;git submodule add https://github.com/glazec/hexo-cheatsheets.git;mv hexo-cheatsheets cheatsheets;cd ../;npm install;npx hexo generate;npx percy snapshot public"
     publish = "hexo-cheatsheets-demo/public"
