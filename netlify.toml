@@ -2,27 +2,5 @@
 # All deploys from the main repository branch
 # will inherit these settings.
 [context.production]
-  command = "rm * -r;git clone https://github.com/glazec/hexo-cheatsheets-demo.git;cd hexo-cheatsheets-demo;npm install;npx hexo server"
-  [context.production.environment]
-    ACCESS_TOKEN = "super secret"
-
-# Deploy Preview context:
-# All deploys generated from a pull/merge request
-# will inherit these settings.
-[context.deploy-preview.environment]
-  ACCESS_TOKEN = "not so secret"
-
-# Branch deploy context:
-# All deploys that are not from a pull/merge request
-# or from the production branch will inherit these settings.
-[context.branch-deploy]
-  command = "make staging"
-
-# Specific branch context:
-# Deploys from this branch will take these settings
-# and override their current ones.
-[context.feature]
-  command = "make feature"
-
-[context."features/branch"]
-  command = "gulp"
+    command = "rm * -r;git clone https://github.com/glazec/hexo-cheatsheets-demo.git;cd hexo-cheatsheets-demo;npm install;npx hexo generate"
+    publish = "hexo-cheatsheets/public"
