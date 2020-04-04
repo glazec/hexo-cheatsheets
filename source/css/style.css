@@ -230,7 +230,7 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone .post-content.-wrapified,
 
 .MarkdownBody h2 code, .MarkdownBody h3 code, .MarkdownBody p code, .MarkdownBody ol code, .MarkdownBody ul code { padding: 0 4px; color: #e53935; }
 
-.MarkdownBody pre, .MarkdownBody code { font-family: "等距更纱黑体 T SC", "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace; }
+.MarkdownBody pre, .MarkdownBody code { font-family: "等距更纱黑体 T SC", "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace; word-break: break-word;}
 
 .MarkdownBody pre.-box-chars { line-height: 1.32; }
 
