@@ -1351,7 +1351,7 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
   /* Description paragraphs */ }
   .h3-section > .body > ul {
     margin: 0;
-    padding: 0;
+    padding: 16px;
     list-style-type: none; }
     .h3-section > .body > ul > li {
       padding: 8px;
