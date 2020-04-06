@@ -168,7 +168,7 @@
 
   // Line divisions
   & > *:not(:first-child) {
-    border-top: solid 1px $dark-line-color;
+    border-top: solid 1px $line-color;
   }
 
   // Collapse paragraphs together

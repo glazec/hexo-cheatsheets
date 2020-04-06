@@ -5,7 +5,7 @@
 $gut-small: 16px; // max 480px width
 $gut: 16px;
 $column: 400px;
-$code-size: 1em;
+$code-size: 0.96em;
 $code-line-height: 1.5;
 $area-width: $column * 3 + 32px;
 
@@ -28,7 +28,7 @@ $base-panel: white;
 $base-head: #111;
 $base-text: #345;
 $base-mute: #667788; // gray
-$base-inline-code: #e53935;
+$base-inline-code: #678;
 
 $base-a: adjust-color(#8370bd, $lightness: -5%); // indigo
 $base-b: adjust-color(#2b72a2, $lightness: -5%); // blue
@@ -48,7 +48,7 @@ $gray-bg: mix($base-body, $base-panel, 50%);
 $gray-text: $base-mute;
 
 $line-color: rgba($base-mute, 0.05);
-$dark-line-color: rgba($base-mute, 0.25);
+$dark-line-color: rgba($base-mute, 0.2);
 
 //
 // Variants
