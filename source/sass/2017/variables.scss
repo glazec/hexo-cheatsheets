@@ -5,7 +5,7 @@
 $gut-small: 16px; // max 480px width
 $gut: 16px;
 $column: 400px;
-$code-size: 0.96em;
+$code-size: 1em;
 $code-line-height: 1.5;
 $area-width: $column * 3 + 32px;
 
@@ -13,8 +13,8 @@ $area-width: $column * 3 + 32px;
  * Fonts
  */
 
-$system-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-$system-mono: 'SFMono-Regular', Consolas, Menlo, 'Liberation Mono', 'Ubuntu Mono', Courier, monospace;
+$system-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei", "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+$system-mono: "Sarasa Mono T SC", "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace;
 $body-font: $system-sans;
 $heading-font: $system-sans;
 $monospace-font: cousine, $system-mono;
@@ -28,6 +28,7 @@ $base-panel: white;
 $base-head: #111;
 $base-text: #345;
 $base-mute: #667788; // gray
+$base-inline-code: #e53935;
 
 $base-a: adjust-color(#8370bd, $lightness: -5%); // indigo
 $base-b: adjust-color(#2b72a2, $lightness: -5%); // blue
@@ -47,7 +48,7 @@ $gray-bg: mix($base-body, $base-panel, 50%);
 $gray-text: $base-mute;
 
 $line-color: rgba($base-mute, 0.05);
-$dark-line-color: rgba($base-mute, 0.2);
+$dark-line-color: rgba($base-mute, 0.25);
 
 //
 // Variants

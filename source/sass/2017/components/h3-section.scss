@@ -80,33 +80,49 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
+
+    & > li {
+      padding: 8px;
+      padding-left: 32px + 4px;
+      position: relative;
+
+      & > p {
+        margin: 0;
+        padding: 0;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        background: $gray-text;
+        border-radius: 50%;
+        left: 16px;
+        top: 16px + 2px;
+      }
+      &+ li {
+        border-top: solid 1px $line-color;
+      }
+    }
   }
 
-  & > ul > li {
-    padding: 8px;
-    padding-left: 32px + 4px;
-    position: relative;
-  }
+  & > ol {
+     margin: 0;
+     padding: 16px 16px 16px 32px;
+     & > li {
+      padding: 8px;
+      padding-left: 4px;
+      position: relative;
 
-  & > ul > li > p {
-    margin: 0;
-    padding: 0;
-  }
-
-  & > ul > li::before {
-    content: '';
-    position: absolute;
-    display: inline-block;
-    width: 4px;
-    height: 4px;
-    background: $gray-text;
-    border-radius: 50%;
-    left: 16px;
-    top: 16px + 2px;
-  }
-
-  & > ul > li + li {
-    border-top: solid 1px $line-color;
+      & > p {
+        margin: 0;
+        padding: 0;
+      }
+      &+ li {
+        border-top: solid 1px $line-color;
+      }
+    }
   }
 
   /* Paragraphs */
@@ -152,7 +168,7 @@
 
   // Line divisions
   & > *:not(:first-child) {
-    border-top: solid 1px $line-color;
+    border-top: solid 1px $dark-line-color;
   }
 
   // Collapse paragraphs together

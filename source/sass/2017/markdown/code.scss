@@ -1,3 +1,12 @@
+.MarkdownBody {
+  & h2, & h3, & p, & ol, & ul {
+    code {
+      padding: 0 4px;
+      color: $base-inline-code;
+    }
+  }
+}
+
 .MarkdownBody code {
   color: $gray-text;
   font-size: $code-size;
@@ -6,6 +15,7 @@
 .MarkdownBody pre,
 .MarkdownBody code {
   font-family: $monospace-font;
+  word-break: break-word;
 }
 
 // Reduce line height for box drawing characters
@@ -32,19 +42,17 @@
     background: white;
     font-size: $code-size;
     line-height: $code-line-height;
-  }
-
-  pre.-wrap {
-    white-space: pre-wrap;
-  }
-
-  pre > code {
-    color: $base-head;
-    max-height: auto;
-    padding: 0;
-    background: transparent;
-    overflow: visible;
-    font-size: 1em;
+    &.-wrap {
+      white-space: pre-wrap;
+    }
+    & > code {
+      color: $base-head;
+      max-height: auto;
+      padding: 0;
+      background: transparent;
+      overflow: visible;
+      font-size: 1em;
+    }
   }
 
   // Line highlight
@@ -54,16 +62,15 @@
       to right,
       rgba($base-c, 0.05) 25%,
       transparent);
-  }
-
-  // Line highlight ranges
-  .line-highlight[data-end] {
-    margin-top: 0;
-  }
-
-  .line-highlight::before,
-  .line-highlight::after {
-    display: none;
+    
+    &[data-end] {
+      margin-top: 0;
+    }
+    // Line highlight ranges
+    &::before,
+    &::after {
+      display: none;
+    }
   }
 }
 

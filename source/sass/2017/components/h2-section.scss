@@ -22,4 +22,22 @@
   &:hover > .anchor {
     opacity: 1;
   }
+
+  & > pre {
+    padding: $gut;
+    margin: 0 0 16px 0;
+    box-shadow: $shadow3;
+
+    @media (max-width: 480px){
+      margin: 0 -16px;
+      box-shadow: $shadow2;
+    }
+  
+    /* Border radius */
+    @media (min-width: 481px) {
+      & {
+        border-radius: 2px;
+      }
+    }
+  }
 }
