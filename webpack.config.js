@@ -14,7 +14,7 @@ module.exports = {
       },
       plugins: [
         new MiniCssExtractPlugin(),
-        new WebpackShellPlugin({onBuildEnd:['npx purgecss --output source/css/ --content ../../public/*.html ../../public/**/*.html source/js/*.js --css source/css/main.css']})
+        // new WebpackShellPlugin({onBuildEnd:['npx purgecss --output source/css/ --content ../../public/*.html ../../public/**/*.html source/js/*.js --css source/css/main.css']})
       ],
     module: {
       rules: [

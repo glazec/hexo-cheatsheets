@@ -4,19 +4,19 @@
 // })();
 
 /* add class for code highlight */
-(function() {
-  document.querySelectorAll("pre>code").forEach(function(node) {
-    languageClass = node.classList[0];
-    node.classList.add("language-" + languageClass);
-  });
-})();
+// (function() {
+//   document.querySelectorAll("pre>code").forEach(function(node) {
+//     languageClass = node.classList[0];
+//     node.classList.add("language-" + languageClass);
+//   });
+// })();
 
-(function() {
-  document.querySelectorAll("h3").forEach(function(node) {
-    languageClass = node.classList[0];
-    node.classList.add("language-" + languageClass);
-  });
-})();
+// (function() {
+//   document.querySelectorAll("h3").forEach(function(node) {
+//     languageClass = node.classList[0];
+//     node.classList.add("language-" + languageClass);
+//   });
+// })();
 
 /* high light prism js */
 (function() {
