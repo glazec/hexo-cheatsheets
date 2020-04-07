@@ -674,23 +674,28 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
   background: white;
   font-size: 0.96em;
   line-height: 1.5; }
-  .MarkdownBody pre.-wrap {
-    white-space: pre-wrap; }
-  .MarkdownBody pre > code {
-    color: #111;
-    max-height: auto;
-    padding: 0;
-    background: transparent;
-    overflow: visible;
-    font-size: 1em; }
+
+.MarkdownBody pre.-wrap {
+  white-space: pre-wrap; }
+
+.MarkdownBody pre > code {
+  color: #111;
+  max-height: auto;
+  padding: 0;
+  background: transparent;
+  overflow: visible;
+  font-size: 1em; }
 
 .MarkdownBody .line-highlight {
   transform: translate3d(0, 2px, 0);
   background: linear-gradient(to right, rgba(20, 175, 131, 0.05) 25%, transparent); }
-  .MarkdownBody .line-highlight[data-end] {
-    margin-top: 0; }
-  .MarkdownBody .line-highlight::before, .MarkdownBody .line-highlight::after {
-    display: none; }
+
+.MarkdownBody .line-highlight[data-end] {
+  margin-top: 0; }
+
+.MarkdownBody .line-highlight::before,
+.MarkdownBody .line-highlight::after {
+  display: none; }
 
 .MarkdownBody pre.-setup,
 .MarkdownBody p.-setup,
