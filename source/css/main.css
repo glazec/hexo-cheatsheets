@@ -648,8 +648,8 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
   border-radius: 0.96em;
   border-width: 1px;
   border-style: solid;
-  border-color: #ddd;
-  background-color: #f3f3f3; }
+  border-color: #eee;
+  background-color: #f9f9f9; }
 
 .MarkdownBody code {
   color: #667788;
