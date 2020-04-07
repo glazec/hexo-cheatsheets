@@ -638,14 +638,18 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
  * For links with sources, eg,
  * [Foo](foo.com) _(foo.com)_
  */
-.MarkdownBody.MarkdownBody a {
-  word-wrap: break-word; }
-  .MarkdownBody.MarkdownBody a + em {
-    opacity: 0.5; }
+.MarkdownBody.MarkdownBody a + em {
+  opacity: 0.5; }
 
-.MarkdownBody h2 code, .MarkdownBody h3 code, .MarkdownBody p code, .MarkdownBody ol code, .MarkdownBody ul code {
+.MarkdownBody :not(pre) > code {
+  margin: 0 4px;
   padding: 0 4px;
-  color: #678; }
+  color: #678;
+  border-radius: 0.96em;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ddd;
+  background-color: #f3f3f3; }
 
 .MarkdownBody code {
   color: #667788;
@@ -653,8 +657,7 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
 
 .MarkdownBody pre,
 .MarkdownBody code {
-  font-family: cousine, "Sarasa Mono T SC", "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace;
-  word-break: break-word; }
+  font-family: cousine, "Sarasa Mono T SC", "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace; }
 
 .MarkdownBody pre.-box-chars {
   line-height: 1.32; }
@@ -674,28 +677,21 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
   background: white;
   font-size: 0.96em;
   line-height: 1.5; }
-
-.MarkdownBody pre.-wrap {
-  white-space: pre-wrap; }
-
-.MarkdownBody pre > code {
-  color: #111;
-  max-height: auto;
-  padding: 0;
-  background: transparent;
-  overflow: visible;
-  font-size: 1em; }
+  .MarkdownBody pre.-wrap {
+    white-space: pre-wrap; }
+  .MarkdownBody pre > code {
+    max-height: auto;
+    padding: 0;
+    background: transparent;
+    overflow: visible; }
 
 .MarkdownBody .line-highlight {
   transform: translate3d(0, 2px, 0);
   background: linear-gradient(to right, rgba(20, 175, 131, 0.05) 25%, transparent); }
-
-.MarkdownBody .line-highlight[data-end] {
-  margin-top: 0; }
-
-.MarkdownBody .line-highlight::before,
-.MarkdownBody .line-highlight::after {
-  display: none; }
+  .MarkdownBody .line-highlight[data-end] {
+    margin-top: 0; }
+  .MarkdownBody .line-highlight::before, .MarkdownBody .line-highlight::after {
+    display: none; }
 
 .MarkdownBody pre.-setup,
 .MarkdownBody p.-setup,
@@ -1272,6 +1268,7 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
  */
 /* Hide the first h2 heading */
 .h2-section {
+  overflow-wrap: break-word;
   /* Hide anchors until mouseover */ }
   .h2-section:first-child:not(.-no-hide) > h2 {
     display: none; }
@@ -1358,6 +1355,8 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
     margin: 0;
     padding: 16px;
     list-style-type: none; }
+    .h3-section > .body > ul ol, .h3-section > .body > ul ul {
+      padding-inline-start: 16px; }
     .h3-section > .body > ul > li {
       padding: 8px;
       padding-left: 36px;
@@ -1380,6 +1379,8 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
   .h3-section > .body > ol {
     margin: 0;
     padding: 16px 16px 16px 32px; }
+    .h3-section > .body > ol ol, .h3-section > .body > ol ul {
+      padding-inline-start: 16px; }
     .h3-section > .body > ol > li {
       padding: 8px;
       padding-left: 4px;

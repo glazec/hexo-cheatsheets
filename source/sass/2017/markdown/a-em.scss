@@ -4,11 +4,7 @@
  */
 
 .MarkdownBody.MarkdownBody {
-  a {
-    word-wrap: break-word;
-
-    & + em {
+  a + em {
       opacity: 0.5;
-    }
   }
 }

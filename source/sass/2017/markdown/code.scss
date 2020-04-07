@@ -1,9 +1,13 @@
 .MarkdownBody {
-  & h2, & h3, & p, & ol, & ul {
-    code {
-      padding: 0 4px;
-      color: $base-inline-code;
-    }
+  :not(pre) > code {
+    margin: 0 4px;
+    padding: 0 4px;
+    color: $base-inline-code;
+    border-radius: $code-size;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $base-inline-code-border;
+    background-color: $base-inline-code-background;
   }
 }
 
@@ -15,7 +19,6 @@
 .MarkdownBody pre,
 .MarkdownBody code {
   font-family: $monospace-font;
-  word-break: break-word;
 }
 
 // Reduce line height for box drawing characters
@@ -46,12 +49,10 @@
       white-space: pre-wrap;
     }
     & > code {
-      color: $base-head;
       max-height: auto;
       padding: 0;
       background: transparent;
       overflow: visible;
-      font-size: 1em;
     }
   }
 

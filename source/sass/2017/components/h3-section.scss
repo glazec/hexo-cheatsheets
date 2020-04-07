@@ -80,6 +80,10 @@
     margin: 0;
     padding: 16px;
     list-style-type: none;
+    
+    & ol, & ul {
+      padding-inline-start: 16px;
+     }
 
     & > li {
       padding: 8px;
@@ -110,6 +114,11 @@
   & > ol {
      margin: 0;
      padding: 16px 16px 16px 32px;
+
+     & ol, & ul {
+      padding-inline-start: 16px;
+     }
+
      & > li {
       padding: 8px;
       padding-left: 4px;

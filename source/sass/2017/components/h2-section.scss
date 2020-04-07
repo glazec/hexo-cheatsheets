@@ -4,6 +4,7 @@
 
 /* Hide the first h2 heading */
 .h2-section {
+  overflow-wrap: break-word;
   &:first-child:not(.-no-hide) > h2 {
     display: none;
   }
