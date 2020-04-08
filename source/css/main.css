@@ -658,16 +658,16 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
 .MarkdownBody .h3-section > .body > table ~ p > code {
   background-color: #ecedef; }
 
-.MarkdownBody .h3-section > .body > pre ~ ul code,
-.MarkdownBody .h3-section > .body > pre ~ ol code,
-.MarkdownBody .h3-section > .body > ul ~ ul code,
-.MarkdownBody .h3-section > .body > ul ~ ol code,
-.MarkdownBody .h3-section > .body > ol ~ ul code,
-.MarkdownBody .h3-section > .body > ol ~ ol code,
-.MarkdownBody .h3-section > .body > iframe ~ ul code,
-.MarkdownBody .h3-section > .body > iframe ~ ol code,
-.MarkdownBody .h3-section > .body > table ~ ul code,
-.MarkdownBody .h3-section > .body > table ~ ol code {
+.MarkdownBody .h3-section > .body > pre ~ ul :not(pre) > code,
+.MarkdownBody .h3-section > .body > pre ~ ol :not(pre) > code,
+.MarkdownBody .h3-section > .body > ul ~ ul :not(pre) > code,
+.MarkdownBody .h3-section > .body > ul ~ ol :not(pre) > code,
+.MarkdownBody .h3-section > .body > ol ~ ul :not(pre) > code,
+.MarkdownBody .h3-section > .body > ol ~ ol :not(pre) > code,
+.MarkdownBody .h3-section > .body > iframe ~ ul :not(pre) > code,
+.MarkdownBody .h3-section > .body > iframe ~ ol :not(pre) > code,
+.MarkdownBody .h3-section > .body > table ~ ul :not(pre) > code,
+.MarkdownBody .h3-section > .body > table ~ ol :not(pre) > code {
   background-color: #ecedef; }
 
 .MarkdownBody code {

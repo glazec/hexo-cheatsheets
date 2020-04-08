@@ -23,7 +23,7 @@
       }
       & ~ ul,
       & ~ ol {
-        & code {
+        & :not(pre) > code {
           background-color: $base-inline-code-background-dark;
         }
       }
