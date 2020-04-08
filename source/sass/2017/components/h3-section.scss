@@ -113,7 +113,7 @@
 
   & > ol {
      margin: 0;
-     padding: 16px 16px 16px 32px;
+     padding: 16px 16px 16px 40px;
 
      & ol, & ul {
       padding-inline-start: 16px;
@@ -121,7 +121,7 @@
 
      & > li {
       padding: 8px;
-      padding-left: 4px;
+      padding-left: 10px;
       position: relative;
 
       & > p {
@@ -155,12 +155,17 @@
   }
 
   /* Description paragraphs */
-  & > pre ~ p,
-  & > ul ~ p,
-  & > iframe ~ p,
-  & > table ~ p {
-    background: $gray-bg;
-    color: $gray-text;
+  & > pre,
+  & > ul,
+  & > ol,
+  & > iframe,
+  & > table {
+    & ~ p,
+    & ~ ul,
+    & ~ ol {
+      background: $gray-bg;
+      color: $gray-text;
+    }
 
     /* Links */
     & a,

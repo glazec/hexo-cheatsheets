@@ -13,12 +13,19 @@
   }
 
   .h3-section > .body {
-    & > pre ~ p,
-    & > ul ~ p,
-    & > iframe ~ p,
-    & > table ~ p {
-      & > code {
+    & > pre,
+    & > ul,
+    & > ol,
+    & > iframe,
+    & > table {
+      & ~ p > code {
         background-color: $base-inline-code-background-dark;
+      }
+      & ~ ul,
+      & ~ ol {
+        & code {
+          background-color: $base-inline-code-background-dark;
+        }
       }
     }
   }
