@@ -1,13 +1,26 @@
 .MarkdownBody {
+
   :not(pre) > code {
-    margin: 0 4px;
-    padding: 0 4px;
+    padding: 1px 5px;
     color: $base-inline-code;
-    border-radius: $code-size;
-    border-width: 1px;
-    border-style: solid;
-    border-color: $base-inline-code-border;
+    background-color: $base-inline-code-background-light;
+  }
+
+  .h3-section-list :not(pre) > code {
+    padding: 1px 5px;
+    color: $base-inline-code;
     background-color: $base-inline-code-background;
+  }
+
+  .h3-section > .body {
+    & > pre ~ p,
+    & > ul ~ p,
+    & > iframe ~ p,
+    & > table ~ p {
+      & > code {
+        background-color: $base-inline-code-background-dark;
+      }
+    }
   }
 }
 

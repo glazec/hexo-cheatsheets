@@ -642,14 +642,20 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
   opacity: 0.5; }
 
 .MarkdownBody :not(pre) > code {
-  margin: 0 4px;
-  padding: 0 4px;
+  padding: 1px 5px;
   color: #678;
-  border-radius: 0.96em;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #eee;
-  background-color: #f9f9f9; }
+  background-color: #fafafb; }
+
+.MarkdownBody .h3-section-list :not(pre) > code {
+  padding: 1px 5px;
+  color: #678;
+  background-color: #eff0f1; }
+
+.MarkdownBody .h3-section > .body > pre ~ p > code,
+.MarkdownBody .h3-section > .body > ul ~ p > code,
+.MarkdownBody .h3-section > .body > iframe ~ p > code,
+.MarkdownBody .h3-section > .body > table ~ p > code {
+  background-color: #ecedef; }
 
 .MarkdownBody code {
   color: #667788;
