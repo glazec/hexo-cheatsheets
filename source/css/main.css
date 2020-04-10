@@ -579,7 +579,7 @@ body {
  * Code
  */
 pre, code {
-  font-family: cousine, "Sarasa Mono T SC", "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace;
+  font-family: cousine, "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace;
   letter-spacing: -0.03em; }
 
 pre {
@@ -676,7 +676,7 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
 
 .MarkdownBody pre,
 .MarkdownBody code {
-  font-family: cousine, "Sarasa Mono T SC", "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace; }
+  font-family: cousine, "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace; }
 
 .MarkdownBody pre.-box-chars {
   line-height: 1.32; }
