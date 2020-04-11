@@ -671,7 +671,7 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
   background-color: #ecedef; }
 
 .MarkdownBody code {
-  color: #667788;
+  color: #345;
   font-size: 0.96em; }
 
 .MarkdownBody pre,
