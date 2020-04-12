@@ -1302,14 +1302,12 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
     padding: 16px;
     margin: 0 0 16px 0;
     box-shadow: 0 6px 8px rgba(102, 119, 136, 0.03), 0 1px 2px rgba(102, 119, 136, 0.3);
-    /* Border radius */ }
+    border-radius: 2px; }
     @media (max-width: 480px) {
       .h2-section > pre {
         margin: 0 -16px;
-        box-shadow: 0 1px 1px rgba(102, 119, 136, 0.55); } }
-    @media (min-width: 481px) {
-      .h2-section > pre {
-        border-radius: 2px; } }
+        box-shadow: 0 1px 1px rgba(102, 119, 136, 0.55);
+        border-radius: unset; } }
 
 /*
  * H3 section

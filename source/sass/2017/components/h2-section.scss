@@ -28,17 +28,17 @@
     padding: $gut;
     margin: 0 0 16px 0;
     box-shadow: $shadow3;
+    border-radius: 2px;
 
     @media (max-width: 480px){
       margin: 0 -16px;
       box-shadow: $shadow2;
+      border-radius: unset;
     }
   
-    /* Border radius */
-    @media (min-width: 481px) {
-      & {
-        border-radius: 2px;
-      }
-    }
+    // /* Border radius */
+    // @media (min-width: 481px) {
+        
+    // }
   }
 }
