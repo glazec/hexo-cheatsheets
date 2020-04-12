@@ -2,6 +2,8 @@
 [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/glaze/cheatsheets)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5df0cfa1-c9c6-4898-a2cb-f99a2ac72585/deploy-status)](https://cheatsheetspreview.netlify.com/)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/03fde2aadd09496690780e70470e4fa1)](https://www.codacy.com/manual/luyiping1011/hexo-cheatsheets?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=glazec/hexo-cheatsheets&amp;utm_campaign=Badge_Grade)
+[![CodeFactor](https://www.codefactor.io/repository/github/glazec/hexo-cheatsheets/badge)](https://www.codefactor.io/repository/github/glazec/hexo-cheatsheets)
 
 A new **cheatsheets** theme for Hexo.
 The design is from [devhints](http://devhints.io)
