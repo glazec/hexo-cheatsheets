@@ -1,5 +1,38 @@
+.MarkdownBody {
+
+  :not(pre) > code {
+    padding: 1px 5px;
+    color: $base-inline-code;
+    background-color: $base-inline-code-background-light;
+  }
+
+  .h3-section-list :not(pre) > code {
+    padding: 1px 5px;
+    color: $base-inline-code;
+    background-color: $base-inline-code-background;
+  }
+
+  .h3-section > .body {
+    & > pre,
+    & > ul,
+    & > ol,
+    & > iframe,
+    & > table {
+      & ~ p > code {
+        background-color: $base-inline-code-background-dark;
+      }
+      & ~ ul,
+      & ~ ol {
+        & :not(pre) > code {
+          background-color: $base-inline-code-background-dark;
+        }
+      }
+    }
+  }
+}
+
 .MarkdownBody code {
-  color: $gray-text;
+  color: $base-code;
   font-size: $code-size;
 }
 
@@ -32,19 +65,15 @@
     background: white;
     font-size: $code-size;
     line-height: $code-line-height;
-  }
-
-  pre.-wrap {
-    white-space: pre-wrap;
-  }
-
-  pre > code {
-    color: $base-head;
-    max-height: auto;
-    padding: 0;
-    background: transparent;
-    overflow: visible;
-    font-size: 1em;
+    &.-wrap {
+      white-space: pre-wrap;
+    }
+    & > code {
+      max-height: auto;
+      padding: 0;
+      background: transparent;
+      overflow: visible;
+    }
   }
 
   // Line highlight
@@ -54,16 +83,15 @@
       to right,
       rgba($base-c, 0.05) 25%,
       transparent);
-  }
-
-  // Line highlight ranges
-  .line-highlight[data-end] {
-    margin-top: 0;
-  }
-
-  .line-highlight::before,
-  .line-highlight::after {
-    display: none;
+    
+    &[data-end] {
+      margin-top: 0;
+    }
+    // Line highlight ranges
+    &::before,
+    &::after {
+      display: none;
+    }
   }
 }
 

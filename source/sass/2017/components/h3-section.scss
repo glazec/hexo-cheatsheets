@@ -78,35 +78,60 @@
   /* Lists */
   & > ul {
     margin: 0;
-    padding: 0;
+    padding: 16px;
     list-style-type: none;
+    
+    & ol, & ul {
+      padding-inline-start: 16px;
+     }
+
+    & > li {
+      padding: 8px;
+      padding-left: 32px + 4px;
+      position: relative;
+
+      & > p {
+        margin: 0;
+        padding: 0;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        background: $gray-text;
+        border-radius: 50%;
+        left: 16px;
+        top: 16px + 2px;
+      }
+      &+ li {
+        border-top: solid 1px $line-color;
+      }
+    }
   }
 
-  & > ul > li {
-    padding: 8px;
-    padding-left: 32px + 4px;
-    position: relative;
-  }
+  & > ol {
+     margin: 0;
+     padding: 16px 16px 16px 40px;
 
-  & > ul > li > p {
-    margin: 0;
-    padding: 0;
-  }
+     & ol, & ul {
+      padding-inline-start: 16px;
+     }
 
-  & > ul > li::before {
-    content: '';
-    position: absolute;
-    display: inline-block;
-    width: 4px;
-    height: 4px;
-    background: $gray-text;
-    border-radius: 50%;
-    left: 16px;
-    top: 16px + 2px;
-  }
+     & > li {
+      padding: 8px;
+      padding-left: 10px;
+      position: relative;
 
-  & > ul > li + li {
-    border-top: solid 1px $line-color;
+      & > p {
+        margin: 0;
+        padding: 0;
+      }
+      &+ li {
+        border-top: solid 1px $line-color;
+      }
+    }
   }
 
   /* Paragraphs */
@@ -130,12 +155,17 @@
   }
 
   /* Description paragraphs */
-  & > pre ~ p,
-  & > ul ~ p,
-  & > iframe ~ p,
-  & > table ~ p {
-    background: $gray-bg;
-    color: $gray-text;
+  & > pre,
+  & > ul,
+  & > ol,
+  & > iframe,
+  & > table {
+    & ~ p,
+    & ~ ul,
+    & ~ ol {
+      background: $gray-bg;
+      color: $gray-text;
+    }
 
     /* Links */
     & a,

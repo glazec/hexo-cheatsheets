@@ -4,6 +4,7 @@
 
 /* Hide the first h2 heading */
 .h2-section {
+  overflow-wrap: break-word;
   &:first-child:not(.-no-hide) > h2 {
     display: none;
   }
@@ -21,5 +22,23 @@
 
   &:hover > .anchor {
     opacity: 1;
+  }
+
+  & > pre {
+    padding: $gut;
+    margin: 0 0 16px 0;
+    box-shadow: $shadow3;
+    border-radius: 2px;
+
+    @media (max-width: 480px){
+      margin: 0 -16px;
+      box-shadow: $shadow2;
+      border-radius: unset;
+    }
+  
+    // /* Border radius */
+    // @media (min-width: 481px) {
+        
+    // }
   }
 }
