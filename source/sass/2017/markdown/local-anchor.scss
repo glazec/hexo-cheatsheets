@@ -1,16 +1,16 @@
 .local-anchor {
   & {
-    margin-left: -.9em;
-    margin-right: .1em;
-    padding: 0 .1em;
+    margin-left: -0.9em;
+    margin-right: 0.1em;
+    padding: 0 0.1em;
   }
 
   // Decoration
   .MarkdownBody &,
   .MarkdownBody &:visited {
     color: $base-mute;
+    opacity: 0.5;
     text-decoration: inherit;
-    opacity: .5;
   }
 
   .MarkdownBody &:target,
@@ -21,8 +21,8 @@
 
   .MarkdownBody &:hover,
   .MarkdownBody &:focus {
-    color: white;
     background: $base-a;
+    color: white;
     opacity: 1;
     text-decoration: inherit;
   }

@@ -4,15 +4,15 @@
 
 .related-posts-callout {
   & {
-    display: flex;
-    text-decoration: none;
-    background: $base-a-gradient;
-    padding: 32px;
     align-items: center;
-    justify-content: center;
-    color: white;
+    background: $base-a-gradient;
     border-radius: 2px;
     box-shadow: $shadow2;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 32px;
+    text-decoration: none;
     text-shadow: 0 1px 1px rgba(black, 0.2);
   }
 
@@ -32,26 +32,26 @@
   }
 
   & > .text > .icon {
-    margin-bottom: 16px;
     display: block;
+    margin-bottom: 16px;
   }
 
   & > .text > .icon::before {
-    content: '';
     @include ion-ios-arrow-back(48px, adjust-color($base-a, $lightness: 16%, $hue: 20deg));
-    height: 64px;
-    width: 64px;
     border: solid 2px adjust-color($base-a, $lightness: 16%, $hue: 20deg);
     border-radius: 50%;
+    content: '';
+    height: 64px;
     text-indent: -2px;
     text-shadow: none;
+    width: 64px;
   }
 
   & > .text > .description {
     @include font-size(1);
-    line-height: 1.4;
-    font-weight: 300;
     display: block;
+    font-weight: 300;
+    line-height: 1.4;
     margin-bottom: 16px;
   }
 }

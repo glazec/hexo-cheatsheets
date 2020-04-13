@@ -1,7 +1,7 @@
 .body-area {
-  max-width: $area-width;
-  margin: 0 auto;
   @include gutter(padding);
+  margin: 0 auto;
+  max-width: $area-width;
 
   &.-slim {
     max-width: 740px;

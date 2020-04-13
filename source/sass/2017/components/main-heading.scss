@@ -6,21 +6,21 @@
   @include heading-style;
 
   & {
-    margin-top: 0;
     margin-bottom: 0;
+    margin-top: 0;
   }
 
   & > h1 {
     @include font-size(8);
-    line-height: 1.2;
-    font-weight: 200;
     font-family: $body-font;
+    font-weight: 200;
+    line-height: 1.2;
     margin: 0;
   }
 
   & > h1 > em {
-    font-style: normal;
     color: lighten($gray-text, 20%);
+    font-style: normal;
   }
 }
 

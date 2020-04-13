@@ -1,30 +1,30 @@
 // https://github.com/modularscale/modularscale-sass v3.0.3
 
 // Ratios
-$double-octave    : 4                 ;
-$pi               : 3.14159265359     ;
-$major-twelfth    : 3                 ;
-$major-eleventh   : 2.666666667       ;
-$major-tenth      : 2.5               ;
-$octave           : 2                 ;
-$major-seventh    : 1.875             ;
-$minor-seventh    : 1.777777778       ;
-$major-sixth      : 1.666666667       ;
-$phi              : 1.618034          ;
-$golden           : $phi              ;
-$minor-sixth      : 1.6               ;
-$fifth            : 1.5               ;
-$augmented-fourth : 1.41421           ;
-$fourth           : 1.333333333       ;
-$major-third      : 1.25              ;
-$minor-third      : 1.2               ;
-$major-second     : 1.125             ;
-$minor-second     : 1.066666667       ;
+$double-octave: 4;
+$pi: 3.14159265359;
+$major-twelfth: 3;
+$major-eleventh: 2.666666667;
+$major-tenth: 2.5;
+$octave: 2;
+$major-seventh: 1.875;
+$minor-seventh: 1.777777778;
+$major-sixth: 1.666666667;
+$phi: 1.618034;
+$golden: $phi;
+$minor-sixth: 1.6;
+$fifth: 1.5;
+$augmented-fourth: 1.41421;
+$fourth: 1.333333333;
+$major-third: 1.25;
+$minor-third: 1.2;
+$major-second: 1.125;
+$minor-second: 1.066666667;
 
 // Base config
-$ms-base          : 1em       !default;
-$ms-ratio         : $fifth    !default;
-$modularscale     : ()        !default;// Parse settings starting with defaults.
+$ms-base: 1em !default;
+$ms-ratio: $fifth !default;
+$modularscale: () !default;// Parse settings starting with defaults.
 // Settings should cascade down like you would expect in CSS.
 // More specific overrides previous settings.
 
@@ -87,8 +87,7 @@ Non-integer values are not supported in modularscale by default.
 Try using mathsass in your project to add non-integer scale support.
 https://github.com/terkel/mathsass
 ======================================================================
-'
-  }
+'; }
 
   // Seed the return.
   $ms-return: $b;
@@ -128,8 +127,8 @@ https://github.com/terkel/mathsass
     // Swap the values if they need to be swapped.
     // Not super fast but simple and modular scale doesn't lean hard on sorting.
     @for $i from 2 through length($l) {
-      $n1: nth($l,$i - 1);
-      $n2: nth($l,$i);
+      $n1: nth($l, $i - 1);
+      $n2: nth($l, $i);
 
       // If the first value is greater than the 2nd, swap them.
       @if $n1 > $n2 {
@@ -156,13 +155,13 @@ https://github.com/terkel/mathsass
 @function ms-to-num($n) {
   $l: str-length($n);
   $r: 0;
-  $m: str-index($n,'.');
+  $m: str-index($n, '.');
   @if $m == null {
     $m: $l + 1;
   }
   // Loop through digits and convert to numbers
   @for $i from 1 through $l {
-    $v: str-slice($n,$i,$i);
+    $v: str-slice($n, $i, $i);
     @if $v == '1' { $v: 1; }
     @elseif $v == '2' { $v: 2; }
     @elseif $v == '3' { $v: 3; }
@@ -176,7 +175,7 @@ https://github.com/terkel/mathsass
     @else { $v: null; }
     @if $v != null {
       $m: $m - 1;
-      $r: $r + ms-pow(10,$m - 1) * $v;
+      $r: $r + ms-pow(10, $m - 1) * $v;
     } @else {
       $l: $l - 1;
     }
@@ -189,27 +188,27 @@ https://github.com/terkel/mathsass
   // Convert to string
   $t: $t + '';
   // Remove base units to calulate ratio
-  $b: ms-unitless(nth($b,1));
+  $b: ms-unitless(nth($b, 1));
   // Find where 'at' is in the string
-  $at: str-index($t,'at');
+  $at: str-index($t, 'at');
 
   // Slice the value and target out
   // and convert strings to numbers
-  $v: ms-to-num(str-slice($t,0,$at - 1));
-  $t: ms-to-num(str-slice($t,$at + 2));
+  $v: ms-to-num(str-slice($t, 0, $at - 1));
+  $t: ms-to-num(str-slice($t, $at + 2));
 
   // Solve the modular scale function for the ratio.
   @return ms-pow(($v/$b),(1/$t));
 }@function ms-function($v: 0, $base: false, $ratio: false, $thread: false, $settings: $modularscale) {
 
   // Parse settings
-  $ms-settings: ms-settings($base,$ratio,$thread,$settings);
+  $ms-settings: ms-settings($base, $ratio, $thread, $settings);
   $base: nth($ms-settings, 1);
   $ratio: nth($ms-settings, 2);
 
   // Render target values from settings.
   @if unit($ratio) != '' {
-    $ratio: ms-target($ratio,$base)
+    $ratio: ms-target($ratio, $base);
   }
 
   // Fast calc if not multi stranded
@@ -218,12 +217,12 @@ https://github.com/terkel/mathsass
   }
 
   // Create new base array
-  $ms-bases: nth($base,1);
+  $ms-bases: nth($base, 1);
 
   // Normalize base values
   @for $i from 2 through length($base) {
     // initial base value
-    $ms-base: nth($base,$i);
+    $ms-base: nth($base, $i);
     // If the base is bigger than the main base
     @if($ms-base > nth($base,1)) {
       // divide the value until it aligns with main base.
@@ -240,7 +239,7 @@ https://github.com/terkel/mathsass
       }
     }
     // Push into new array
-    $ms-bases: append($ms-bases,$ms-base);
+    $ms-bases: append($ms-bases, $ms-base);
   }
 
   // Sort array from smallest to largest.
@@ -289,7 +288,7 @@ https://github.com/terkel/mathsass
           @media (min-width: $last-break) and (max-width: $v) {
             $val1: ms-function($val, $thread: $last-break, $settings: $map);
             $val2: ms-function($val, $thread: $v, $settings: $map);
-            #{$prop}: ms-fluid($val1,$val2,$last-break,$v);
+            #{$prop}: ms-fluid($val1, $val2, $last-break, $v);
           }
           $last-break: $v;
         }

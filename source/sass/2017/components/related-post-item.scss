@@ -1,16 +1,16 @@
 .related-post-item {
   & {
     display: flex;
-    text-align: left;
     line-height: 1.4;
+    text-align: left;
   }
 
   // Layout
   & > a {
-    flex: 1 1 100%;
-    display: block;
     border-radius: 2px;
     box-shadow: $shadow2;
+    display: block;
+    flex: 1 1 100%;
     padding: 16px;
     text-decoration: none;
   }

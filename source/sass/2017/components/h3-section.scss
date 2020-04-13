@@ -19,8 +19,8 @@
 
   /* Collapse/flush */
   @media (max-width: 480px) {
-    margin: 0 -16px;
     box-shadow: $shadow2;
+    margin: 0 -16px;
   }
 
   /* Border radius */
@@ -47,10 +47,10 @@
 
 .h3-section > h3 {
   & {
-    margin-top: 8px;
     margin-bottom: 16px;
-    white-space: nowrap;
+    margin-top: 8px;
     overflow: hidden;
+    white-space: nowrap;
   }
 
   // Mobile: the padding below h3-section is enough
@@ -60,13 +60,13 @@
 
   // Horizontal line
   &::after {
-    margin-left: 24px;
+    background: linear-gradient(to right, rgba($base-a, 0.2), transparent 80%);
     content: '';
     display: inline-block;
+    height: 1px;
+    margin-left: 24px;
     vertical-align: middle;
     width: 100%;
-    height: 1px;
-    background: linear-gradient(to right, rgba($base-a, 0.2), transparent 80%);
   }
 }
 
@@ -77,13 +77,14 @@
 .h3-section > .body {
   /* Lists */
   & > ul {
+    list-style-type: none;
     margin: 0;
     padding: 16px;
-    list-style-type: none;
     
-    & ol, & ul {
+    & ol,
+    & ul {
       padding-inline-start: 16px;
-     }
+    }
 
     & > li {
       padding: 8px;
@@ -94,17 +95,19 @@
         margin: 0;
         padding: 0;
       }
+
       &::before {
-        content: '';
-        position: absolute;
-        display: inline-block;
-        width: 4px;
-        height: 4px;
         background: $gray-text;
         border-radius: 50%;
+        content: '';
+        display: inline-block;
+        height: 4px;
         left: 16px;
+        position: absolute;
         top: 16px + 2px;
+        width: 4px;
       }
+
       &+ li {
         border-top: solid 1px $line-color;
       }
@@ -112,14 +115,15 @@
   }
 
   & > ol {
-     margin: 0;
-     padding: 16px 16px 16px 40px;
+    margin: 0;
+    padding: 16px 16px 16px 40px;
 
-     & ol, & ul {
+    & ol,
+    & ul {
       padding-inline-start: 16px;
-     }
+    }
 
-     & > li {
+    & > li {
       padding: 8px;
       padding-left: 10px;
       position: relative;
@@ -128,6 +132,7 @@
         margin: 0;
         padding: 0;
       }
+
       &+ li {
         border-top: solid 1px $line-color;
       }
@@ -136,18 +141,18 @@
 
   /* Paragraphs */
   & > p {
-    padding: 16px;
     margin: 0;
+    padding: 16px;
   }
 
   /* Headings in between bodies */
   & > h4 {
     @include font-size(-1);
-    margin: 0;
-    padding: 4px 16px;
-    font-weight: normal;
     background: $gray-bg;
     color: $gray-text;
+    font-weight: normal;
+    margin: 0;
+    padding: 4px 16px;
 
     & + * {
       border-top: solid 1px $line-color;
@@ -170,9 +175,9 @@
     /* Links */
     & a,
     & a:visited {
+      border-bottom: solid 1px $line-color;
       color: $base-text;
       text-decoration: none;
-      border-bottom: solid 1px $line-color;
     }
 
     & a:hover {
@@ -188,8 +193,8 @@
   // Collapse paragraphs together
   & > p + p,
   & > p + p:not(:first-child) {
-    margin-top: -1.5em;
     border-top: 0;
+    margin-top: -1.5em;
   }
 }
 
@@ -209,14 +214,14 @@
  */
 
 ul.-also-see.-also-see.-also-see {
+  background: $gray-bg;
   display: flex;
   flex-wrap: wrap;
-  background: $gray-bg;
 
   & > li {
+    border-top: solid 1px $dark-line-color;
     flex: 1 0 20%;
     padding: 24px;
-    border-top: solid 1px $dark-line-color;
 
     & + li {
       border-left: solid 1px $dark-line-color;

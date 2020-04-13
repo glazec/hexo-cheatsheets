@@ -5,9 +5,9 @@
 .MarkdownBody h2 {
   @include heading-style;
   @include font-size(6);
-  line-height: 1.2;
-  font-weight: 200;
   font-family: $heading-font;
+  font-weight: 200;
+  line-height: 1.2;
   margin-top: 0;
 
   &:target {
@@ -16,13 +16,13 @@
 }
 
 .MarkdownBody h3 {
-  margin: 0;
-  padding: 0;
-  margin-bottom: 16px;
-  font-family: $heading-font;
   @include font-size(2);
-  font-weight: 400;
   color: $base-a;
+  font-family: $heading-font;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 16px;
+  padding: 0;
 }
 
 .MarkdownBody {
@@ -37,8 +37,8 @@
   }
 
   em {
-    font-style: normal;
     color: $gray-text;
+    font-style: normal;
   }
 
   iframe {

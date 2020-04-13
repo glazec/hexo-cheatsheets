@@ -1,27 +1,27 @@
 .search-box {
+  align-items: center;
   background: $base-panel;
   box-shadow: $shadow3;
+  cursor: text;
   display: flex;
   height: 64px;
-  align-items: center;
-  cursor: text;
 
   & > input {
-    font-family: $body-font;
     @include font-size(2);
-    padding: 16px;
-    height: 64px;
     background: transparent;
     border: 0;
-    flex: 1 1 auto;
-    padding-left: 0;
-    font-weight: bold;
     color: $base-head;
+    flex: 1 1 auto;
+    font-family: $body-font;
+    font-weight: bold;
+    height: 64px;
     min-width: 48px;
+    padding: 16px;
+    padding-left: 0;
 
     &::placeholder {
-      font-weight: normal;
       color: $base-mute;
+      font-weight: normal;
     }
   }
 
@@ -31,22 +31,32 @@
 
   & > .prefix {
     @include font-size(0);
-    display: block;
-    color: rgba($base-mute, 0.5);
-    font-weight: 400;
-    user-select: none;
-    line-height: 1.5em;
-    padding: 2px 8px;
-    border-radius: 3px;
     background: rgba($base-body, 0.5);
-    margin: 0 0 0 16px;
+    border-radius: 3px;
     box-shadow: 0 1px 1px rgba($base-mute, 0.25);
+    color: rgba($base-mute, 0.5);
+    display: block;
+    font-weight: 400;
+    line-height: 1.5em;
+    margin: 0 0 0 16px;
+    padding: 2px 8px;
+    user-select: none;
   }
 
   & > .sep {
-    color: rgba($base-mute, 0.5);
     @include font-size(2);
+    color: rgba($base-mute, 0.5);
     margin: 0 8px;
+  }
+
+  // Icon
+  &::before {
+    @include ion-md-search(32px, $base-head);
+    background-position: center center;
+    content: '';
+    flex: 0 0 64px;
+    order: 2;
+    width: 64px;
   }
 
   // Hide prefix in mobiel
@@ -60,16 +70,6 @@
       padding-left: 16px;
     }
   }
-
-  // Icon
-  &::before {
-    content: '';
-    @include ion-md-search(32px, $base-head);
-    background-position: center center;
-    flex: 0 0 64px;
-    width: 64px;
-    order: 2;
-  }
 }
 
 /*
@@ -82,8 +82,8 @@
   }
 
   & > input {
-    padding: 8px;
     height: 48px;
+    padding: 8px;
     padding-left: 0;
   }
 
@@ -94,10 +94,10 @@
   }
 
   &::before {
-    flex: 0 0 48px;
-    width: 48px;
-    line-height: 48px;
-    background-size: 24px 24px;
     background-position: center center;
+    background-size: 24px 24px;
+    flex: 0 0 48px;
+    line-height: 48px;
+    width: 48px;
   }
 }

@@ -14,9 +14,9 @@
   & > summary {
     @include font-size(1);
     color: $base-a;
+    cursor: pointer;
     padding: 24px 0;
     white-space: nowrap;
-    cursor: pointer;
   }
 
   & > summary:hover,
@@ -37,10 +37,10 @@
 
   & > summary > .count::before {
     @include ion-md-chatboxes(24px, $base-a);
-    content: '';
-    vertical-align: middle;
     color: $base-a;
+    content: '';
     margin: 0 8px;
+    vertical-align: middle;
   }
 
   & > summary > .suffix {
@@ -48,7 +48,7 @@
   }
 
   & > summary > .fauxlink {
-    margin-left: 4px;
     border-bottom: solid 1px rgba($base-a, 0.25);
+    margin-left: 4px;
   }
 }

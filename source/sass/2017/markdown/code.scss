@@ -1,15 +1,14 @@
 .MarkdownBody {
-
   :not(pre) > code {
-    padding: 1px 5px;
-    color: $base-inline-code;
     background-color: $base-inline-code-background-light;
+    color: $base-inline-code;
+    padding: 1px 5px;
   }
 
   .h3-section-list :not(pre) > code {
-    padding: 1px 5px;
-    color: $base-inline-code;
     background-color: $base-inline-code-background;
+    color: $base-inline-code;
+    padding: 1px 5px;
   }
 
   .h3-section > .body {
@@ -21,6 +20,7 @@
       & ~ p > code {
         background-color: $base-inline-code-background-dark;
       }
+
       & ~ ul,
       & ~ ol {
         & :not(pre) > code {
@@ -48,8 +48,8 @@
 
 // For figlet.md
 .MarkdownBody pre.-figlet {
-  line-height: 1;
   font-size: 11px;
+  line-height: 1;
 }
 
 /*
@@ -58,31 +58,32 @@
 
 .MarkdownBody {
   pre {
-    box-shadow: none;
-    border-left: 0;
-    overflow: hidden;
-    overflow-x: auto;
     background: white;
+    border-left: 0;
+    box-shadow: none;
     font-size: $code-size;
     line-height: $code-line-height;
+    overflow: hidden;
+    overflow-x: auto;
+
     &.-wrap {
       white-space: pre-wrap;
     }
+
     & > code {
-      max-height: auto;
-      padding: 0;
       background: transparent;
+      max-height: auto;
       overflow: visible;
+      padding: 0;
     }
   }
 
   // Line highlight
   .line-highlight {
+    background: linear-gradient(to right,
+    rgba($base-c, 0.05) 25%,
+    transparent);
     transform: translate3d(0, 2px, 0);
-    background: linear-gradient(
-      to right,
-      rgba($base-c, 0.05) 25%,
-      transparent);
     
     &[data-end] {
       margin-top: 0;

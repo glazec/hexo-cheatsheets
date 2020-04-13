@@ -3,21 +3,14 @@
  */
 
 .back-button {
-  text-decoration: none;
-  width: 48px;
+  border-radius: 50%;
+  display: inline-block;
   height: 48px;
   line-height: 48px - 2px;
   text-align: center;
-  display: inline-block;
-  border-radius: 50%;
+  text-decoration: none;
   transition: all 100ms linear;
-
-  // Smaller on mobile
-  @media (max-width: 480px) {
-    width: 32px;
-    height: 32px;
-    line-height: 32px - 2;
-  }
+  width: 48px;
 
   // Colors
   &,
@@ -28,21 +21,28 @@
   // Active
   &:hover,
   &:focus {
-    color: white;
     background: $base-a;
+    color: white;
     opacity: 1;
   }
 
   // Icon
   &::before {
-    content: '';
     @include ion-md-arrow-back(24px, $base-text);
+    content: '';
     vertical-align: middle;
   }
 
   &:hover::before,
   &:focus::before {
     @include ion-md-arrow-back(24px, white);
+  }
+
+  // Smaller on mobile
+  @media (max-width: 480px) {
+    height: 32px;
+    line-height: 32px - 2;
+    width: 32px;
   }
 
   // Icon: smaller on mobile

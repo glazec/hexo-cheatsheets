@@ -5,6 +5,7 @@
 /* Hide the first h2 heading */
 .h2-section {
   overflow-wrap: break-word;
+
   &:first-child:not(.-no-hide) > h2 {
     display: none;
   }
@@ -25,15 +26,15 @@
   }
 
   & > pre {
-    padding: $gut;
-    margin: 0 0 16px;
-    box-shadow: $shadow3;
     border-radius: 2px;
+    box-shadow: $shadow3;
+    margin: 0 0 16px;
+    padding: $gut;
 
-    @media (max-width: 480px){
-      margin: 0 -16px;
-      box-shadow: $shadow2;
+    @media (max-width: 480px) {
       border-radius: unset;
+      box-shadow: $shadow2;
+      margin: 0 -16px;
     }
   
     // /* Border radius */

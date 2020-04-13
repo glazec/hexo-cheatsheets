@@ -12,9 +12,9 @@
   }
 
   & > li {
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    list-style-type: none;
   }
 
   & > li > a,
@@ -78,8 +78,8 @@
 
   & > .facebook > a::before,
   & > .twitter > a::before {
-    width: 32px;
     height: 32px;
+    width: 32px;
   }
 
   // Compensate alignment
@@ -89,10 +89,10 @@
   }
 
   & > .link.-button > a {
-    box-shadow: inset 0 0 0 1px $dark-line-color;
     border-radius: 2px;
-    padding: 0 16px;
+    box-shadow: inset 0 0 0 1px $dark-line-color;
     margin: 0 8px;
+    padding: 0 16px;
     transition: all 100ms linear;
 
     & > .text {
@@ -128,8 +128,9 @@
   & > .link:last-child > a {
     margin-right: 0;
   }
+
   [class*=hint--] {
-    position: relative;
     display: inline-block;
+    position: relative;
   }
 }

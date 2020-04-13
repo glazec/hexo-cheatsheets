@@ -27,8 +27,8 @@
   & td,
   & th {
     padding: 8px 16px;
-    vertical-align: top;
     text-align: left;
+    vertical-align: top;
   }
 
   & tr th:last-child,
@@ -56,8 +56,8 @@
 
   & td:first-child > code ~ em {
     @include font-size(-1);
-    font-style: normal;
     color: $gray-text;
+    font-style: normal;
   }
 
   & thead {
@@ -65,20 +65,20 @@
   }
 
   & thead th {
-    font-weight: normal;
     color: $base-a;
+    font-weight: normal;
   }
 }
 
 @mixin shortcut-span {
-  font-size: 1rem;
-  padding: 5px 6px;
-  padding-left: 8px; // compensation
   background: $gray-bg;
   border-radius: 3px;
-  margin-right: 2px;
-  letter-spacing: 0.1em;
   color: $base-text;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  margin-right: 2px;
+  padding: 5px 6px;
+  padding-left: 8px; // compensation
 }
 
 .MarkdownBody table.-shortcuts {
@@ -99,8 +99,8 @@
 
 .MarkdownBody table.-headers {
   & thead {
-    display: table-header-group;
     border-bottom: solid 1px $dark-line-color;
+    display: table-header-group;
   }
 }
 

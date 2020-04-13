@@ -20,9 +20,9 @@
 
   &,
   & > div > span {
-    min-width: 130px + 16px + 64px;
-    max-width: 380px;
     height: 100px;
+    max-width: 380px;
+    min-width: 130px + 16px + 64px;
   }
 
   & > div > span {
@@ -32,9 +32,9 @@
 
   // Clearfix
   & > div > span::after {
+    clear: both;
     content: '';
     display: table;
-    clear: both;
     zoom: 1;
   }
 
@@ -43,7 +43,7 @@
     margin-left: 16px;
   }
 
-  .carbon-text:first-line {
+  .carbon-text::first-line {
     @include font-size(1);
     color: $base-head;
     font-weight: 300;
@@ -52,12 +52,12 @@
 
   @media (min-width: 481px) {
     .carbon-poweredby::before {
-      display: block;
-      content: '';
-      width: 32px;
-      height: 1px;
       background: $dark-line-color;
+      content: '';
+      display: block;
+      height: 1px;
       margin: 8px (130px + 16px) 8px auto;
+      width: 32px;
     }
   }
 }

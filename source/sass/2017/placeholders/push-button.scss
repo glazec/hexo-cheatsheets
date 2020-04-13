@@ -1,13 +1,13 @@
 %push-button {
-  display: inline-block;
-  text-decoration: none;
-  padding: 8px 16px;
   border-radius: 3px;
+  display: inline-block;
+  padding: 8px 16px;
+  text-decoration: none;
 
   &,
   &:visited {
-    background-color: $base-a;
     background: $base-a-gradient;
+    background-color: $base-a;
     color: white;
   }
 

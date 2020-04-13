@@ -1,8 +1,8 @@
 @mixin heading-style {
   margin: 0;
-  padding: 0;
   margin-bottom: 16px + 8px;
   margin-top: 64px;
+  padding: 0;
   position: relative;
 
   @media (max-width: 768px) {

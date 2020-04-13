@@ -5,11 +5,11 @@
 .search-footer {
   & {
     @include section-with-container;
-    padding-top: 16px;
-    padding-bottom: 16px;
     background: $gray-bg;
-    border-top: solid 1px $dark-line-color;
     border-bottom: solid 1px $dark-line-color;
+    border-top: solid 1px $dark-line-color;
+    padding-bottom: 16px;
+    padding-top: 16px;
   }
 }
 

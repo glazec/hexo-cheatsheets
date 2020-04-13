@@ -4,9 +4,9 @@
 
 .home-button {
   & {
-    display: inline-block;
-    box-shadow: inset 0 0 0 1px $dark-line-color;
     border-radius: 50%;
+    box-shadow: inset 0 0 0 1px $dark-line-color;
+    display: inline-block;
   }
 
   &,
@@ -21,8 +21,8 @@
   }
 
   & > i::before {
-    content: '';
     @include ion-ios-home-outline(24px, $base-mute);
+    content: '';
     height: 48px;
     line-height: 48px;
     width: 48px;

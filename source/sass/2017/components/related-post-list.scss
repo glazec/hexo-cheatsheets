@@ -1,15 +1,15 @@
 .related-post-list {
   &,
   & > li {
+    list-style-type: none;
     margin: 0;
     padding: 0;
-    list-style-type: none;
   }
 
   & {
     display: flex;
-    margin: -4px;
     flex-wrap: wrap;
+    margin: -4px;
   }
 
   @media (max-width: 768px) {

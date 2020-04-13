@@ -10,13 +10,13 @@
 
 .MarkdownBody.MarkdownBody p.-crosslink {
   & > a {
-    display: block;
-    text-decoration: none;
-    color: $base-a;
     border-bottom: 0;
     box-shadow: none;
+    color: $base-a;
+    display: block;
     margin: -16px;
     padding: 16px;
+    text-decoration: none;
   }
 
   & > a:visited {
@@ -24,13 +24,13 @@
   }
 
   & > a::before {
-    content: '';
     @include ion-md-arrow-forward(16px, white);
-    margin-right: 16px;
-    width: 32px;
+    border-radius: 50%;
+    content: '';
     height: 32px;
     line-height: 32px;
-    border-radius: 50%;
+    margin-right: 16px;
+    width: 32px;
   }
 
   & > a,

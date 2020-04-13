@@ -11,15 +11,15 @@
   & > .container {
     @include gutter(padding-left);
     @include gutter(padding-right);
-    max-width: $area-width;
     margin: 0 auto;
+    max-width: $area-width;
   }
 
   // Horizontal line
   & > .container::before {
+    background: linear-gradient(to right, $dark-line-color 50%, transparent);
     content: '';
     display: block;
-    background: linear-gradient(to right, $dark-line-color 50%, transparent);
     height: 1px;
   }
 }

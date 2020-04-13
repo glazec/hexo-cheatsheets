@@ -3,16 +3,16 @@
   text-decoration: none;
 
   & > .info {
-    display: block;
     background: darken($base-a, 0%);
-    color: white;
-    text-align: left;
-    padding: 16px;
-    width: auto;
     border-radius: 3px;
     box-shadow: $shadow2;
+    color: white;
+    display: block;
+    padding: 16px;
+    text-align: left;
     text-shadow: 0 1px 1px rgba($base-text, 0.3);
     white-space: nowrap;
+    width: auto;
   }
 
   &:hover > .info,
@@ -22,10 +22,9 @@
 
   &:nth-of-type(3n + 1) {
     & > .info {
-      background: linear-gradient(
-        15deg,
-        $base-a,
-        adjust-color($base-a, $lightness: 4%, $hue: 20deg));
+      background: linear-gradient(15deg,
+      $base-a,
+      adjust-color($base-a, $lightness: 4%, $hue: 20deg));
     }
 
     &:hover > .info,
@@ -36,10 +35,9 @@
 
   &:nth-of-type(3n + 2) {
     & > .info {
-      background: linear-gradient(
-        15deg,
-        $base-mute,
-        adjust-color($base-mute, $lightness: 4%, $hue: -10deg));
+      background: linear-gradient(15deg,
+      $base-mute,
+      adjust-color($base-mute, $lightness: 4%, $hue: -10deg));
     }
 
     &:hover > .info,
@@ -50,10 +48,9 @@
 
   &:nth-of-type(3n + 3) {
     & > .info {
-      background: linear-gradient(
-        15deg,
-        $base-c,
-        adjust-color($base-c, $lightness: 2%, $hue: 6deg));
+      background: linear-gradient(15deg,
+      $base-c,
+      adjust-color($base-c, $lightness: 2%, $hue: 6deg));
     }
 
     &:hover > .info,
