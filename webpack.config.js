@@ -1,16 +1,16 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackShellPlugin = require('webpack-shell-plugin');
-require('style-loader')
-require('css-loader')
-require('sass-loader')
+require('style-loader');
+require('css-loader');
+require('sass-loader');
 
 module.exports = {
-    mode:'development',
+    mode: 'development',
     entry: ['./source/sass/2017/style.scss'],
     output: {
         path: path.resolve(__dirname, 'source/css'),
-        filename: 'bundle.css'
+        filename: 'bundle.css',
       },
       plugins: [
         new MiniCssExtractPlugin(),
