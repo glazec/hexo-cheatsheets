@@ -58,4 +58,5 @@ githubToolTip: "Text displayed when hovering on the github button"
 ```·
 
 ## Roadmap
-<iframe src="https://coda.io/embed/djgAWpgIbG/_suZXE?viewMode=embedplay&hideSections=true" width=900 height=500 style="max-width: 100%;" allow="fullscreen"></iframe>
+![https://coda.io/d/User-Feedback_ddjgAWpgIbG](https://inevitable.tech/roadmap.png)
+
