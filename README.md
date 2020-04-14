@@ -59,5 +59,4 @@ githubToolTip: "Text displayed when hovering on the github button"
 ```
 
 ## Roadmap
-![https://coda.io/d/User-Feedback_ddjgAWpgIbG](https://www.inevitable.tech/roadmap.png)
-
+[![IMAGE ALT TEXT HERE](https://www.inevitable.tech/roadmap.png)](https://coda.io/d/User-Feedback_ddjgAWpgIbG)
