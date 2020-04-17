@@ -3,7 +3,10 @@
  */
 
 .h3-section > .body {
-  & > pre {
+  background: rgb(255, 255, 255);
+  box-shadow: $shadow3;
+
+  > pre {
     margin: 0;
     padding: 16px;
   }
@@ -12,10 +15,8 @@
     overflow-x: auto;
   }
 
-  & {
-    background: white;
-    box-shadow: $shadow3;
-  }
+  
+  
 
   /* Collapse/flush */
   @media (max-width: 480px) {
@@ -46,12 +47,10 @@
  */
 
 .h3-section > h3 {
-  & {
     margin-bottom: 16px;
     margin-top: 8px;
     overflow: hidden;
     white-space: nowrap;
-  }
 
   // Mobile: the padding below h3-section is enough
   @media (max-width: 768px) {
@@ -80,7 +79,7 @@
     list-style-type: none;
     margin: 0;
     padding: 16px;
-    
+
     & ol,
     & ul {
       padding-inline-start: 16px;
@@ -108,7 +107,7 @@
         width: 4px;
       }
 
-      &+ li {
+      & + li {
         border-top: solid 1px $line-color;
       }
     }
@@ -133,7 +132,7 @@
         padding: 0;
       }
 
-      &+ li {
+      & + li {
         border-top: solid 1px $line-color;
       }
     }
