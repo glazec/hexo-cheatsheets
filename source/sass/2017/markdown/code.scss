@@ -1,4 +1,11 @@
 .MarkdownBody {
+  & code{
+    color: $base-code;
+    font-size: $code-size;
+  }
+  & pre,& code{
+    font-family: $monospace-font;
+  }
   :not(pre) > code {
     background-color: $base-inline-code-background-light;
     color: $base-inline-code;
@@ -31,16 +38,6 @@
   }
 }
 
-.MarkdownBody code {
-  color: $base-code;
-  font-size: $code-size;
-}
-
-.MarkdownBody pre,
-.MarkdownBody code {
-  font-family: $monospace-font;
-}
-
 // Reduce line height for box drawing characters
 .MarkdownBody pre.-box-chars {
   line-height: 1.32;
@@ -52,49 +49,6 @@
   line-height: 1;
 }
 
-/*
- * Undo prism theme crap
- */
-
-.MarkdownBody {
-  pre {
-    background: white;
-    border-left: 0;
-    box-shadow: none;
-    font-size: $code-size;
-    line-height: $code-line-height;
-    overflow: hidden;
-    overflow-x: auto;
-
-    &.-wrap {
-      white-space: pre-wrap;
-    }
-
-    & > code {
-      background: transparent;
-      max-height: auto;
-      overflow: visible;
-      padding: 0;
-    }
-  }
-
-  // Line highlight
-  .line-highlight {
-    background: linear-gradient(to right,
-    rgba($base-c, 0.05) 25%,
-    transparent);
-    transform: translate3d(0, 2px, 0);
-    
-    &[data-end] {
-      margin-top: 0;
-    }
-    // Line highlight ranges
-    &::before,
-    &::after {
-      display: none;
-    }
-  }
-}
 
 .MarkdownBody pre.-setup,
 .MarkdownBody p.-setup,
@@ -104,7 +58,7 @@
 }
 
 /*
- * Syntax kighlight
+ * Syntax highlight
  */
 
 .token {

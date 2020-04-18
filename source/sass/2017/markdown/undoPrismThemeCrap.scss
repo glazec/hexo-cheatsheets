@@ -1,0 +1,44 @@
+
+/*
+ * Undo prism theme crap
+ */
+
+ .MarkdownBody {
+    pre {
+      background: white;
+      border-left: 0;
+      box-shadow: none;
+      font-size: $code-size;
+      line-height: $code-line-height;
+      overflow: hidden;
+      overflow-x: auto;
+  
+      &.-wrap {
+        white-space: pre-wrap;
+      }
+  
+      & > code {
+        background: transparent;
+        max-height: auto;
+        overflow: visible;
+        padding: 0;
+      }
+    }
+  
+    // Line highlight
+    .line-highlight {
+      background: linear-gradient(to right,
+      rgba($base-c, 0.05) 25%,
+      transparent);
+      transform: translate3d(0, 2px, 0);
+      
+      &[data-end] {
+        margin-top: 0;
+      }
+      // Line highlight ranges
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }

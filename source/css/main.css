@@ -643,6 +643,13 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
 .MarkdownBody.MarkdownBody a + em {
   opacity: 0.5; }
 
+.MarkdownBody code {
+  color: #111;
+  font-size: 0.96em; }
+
+.MarkdownBody pre, .MarkdownBody code {
+  font-family: cousine, "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace; }
+
 .MarkdownBody :not(pre) > code {
   background-color: #fafafb;
   color: #678;
@@ -672,47 +679,12 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
 .MarkdownBody .h3-section > .body > table ~ ol :not(pre) > code {
   background-color: #ecedef; }
 
-.MarkdownBody code {
-  color: #111;
-  font-size: 0.96em; }
-
-.MarkdownBody pre,
-.MarkdownBody code {
-  font-family: cousine, "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace; }
-
 .MarkdownBody pre.-box-chars {
   line-height: 1.32; }
 
 .MarkdownBody pre.-figlet {
   font-size: 11px;
   line-height: 1; }
-
-/*
- * Undo prism theme crap
- */
-.MarkdownBody pre {
-  background: white;
-  border-left: 0;
-  box-shadow: none;
-  font-size: 0.96em;
-  line-height: 1.5;
-  overflow: hidden;
-  overflow-x: auto; }
-  .MarkdownBody pre.-wrap {
-    white-space: pre-wrap; }
-  .MarkdownBody pre > code {
-    background: transparent;
-    max-height: auto;
-    overflow: visible;
-    padding: 0; }
-
-.MarkdownBody .line-highlight {
-  background: linear-gradient(to right, rgba(20, 175, 131, 0.05) 25%, transparent);
-  transform: translate3d(0, 2px, 0); }
-  .MarkdownBody .line-highlight[data-end] {
-    margin-top: 0; }
-  .MarkdownBody .line-highlight::before, .MarkdownBody .line-highlight::after {
-    display: none; }
 
 .MarkdownBody pre.-setup,
 .MarkdownBody p.-setup,
@@ -721,7 +693,7 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
   background: #f8f9fa; }
 
 /*
- * Syntax kighlight
+ * Syntax highlight
  */
 .token.tag, .token.keyword {
   color: #26648e; }
@@ -2734,5 +2706,32 @@ ul.-also-see.-also-see.-also-see {
   .top-sheet.top-sheet:nth-of-type(3n + 3):focus > .info {
     background: #108b68; }
   .top-sheet.top-sheet > .info > .title {
+    display: none; }
+
+/*
+ * Undo prism theme crap
+ */
+.MarkdownBody pre {
+  background: white;
+  border-left: 0;
+  box-shadow: none;
+  font-size: 0.96em;
+  line-height: 1.5;
+  overflow: hidden;
+  overflow-x: auto; }
+  .MarkdownBody pre.-wrap {
+    white-space: pre-wrap; }
+  .MarkdownBody pre > code {
+    background: transparent;
+    max-height: auto;
+    overflow: visible;
+    padding: 0; }
+
+.MarkdownBody .line-highlight {
+  background: linear-gradient(to right, rgba(20, 175, 131, 0.05) 25%, transparent);
+  transform: translate3d(0, 2px, 0); }
+  .MarkdownBody .line-highlight[data-end] {
+    margin-top: 0; }
+  .MarkdownBody .line-highlight::before, .MarkdownBody .line-highlight::after {
     display: none; }
 
