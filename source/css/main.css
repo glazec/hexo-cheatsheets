@@ -13,6 +13,28 @@
   box-sizing: inherit;
   /* 2 */ }
 
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  margin: 5px 0;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(175, 175, 175, 0.75);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 5px;
+  background-color: rgba(100, 100, 100, 0.85);
+}
+  
 /**
  * 1. Add text decoration inheritance in all browsers (opinionated).
  * 2. Add vertical alignment inheritence in all browsers (opinionated).
@@ -1997,6 +2019,7 @@ ul.-also-see.-also-see.-also-see {
   color: #745fb5;
   font-weight: normal;
   margin: 16px 0;
+  margin-top: 48px;
   padding: 0 0 16px; }
   @media (min-width: 480px) and (max-width: 768px) {
     .pages-list > .category {
