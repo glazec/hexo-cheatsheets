@@ -12,13 +12,13 @@
     padding: 1px 5px;
   }
 
-  .h3-section-list :not(pre) > code {
+  .code-section-list :not(pre) > code {
     background-color: $base-inline-code-background;
     color: $base-inline-code;
     padding: 1px 5px;
   }
 
-  .h3-section > .body {
+  :is(.h3-section, .h4-section, .h5-section) > .body {
     & > pre,
     & > ul,
     & > ol,

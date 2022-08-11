@@ -2,7 +2,7 @@
  * H3 section
  */
 
-.h3-section > .body {
+:is(.h3-section, .h4-section, .h5-section) > .body {
   background: rgb(255, 255, 255);
   box-shadow: $shadow3;
 
@@ -52,8 +52,9 @@
   }
 
   & > ol {
+    list-style-type: none;
     margin: 0;
-    padding: 16px 16px 16px 40px;
+    padding: 0;
   }
 
   /* Description paragraphs */
@@ -145,7 +146,7 @@
   }
 
   /* Headings in between bodies */
-  & > h4 {
+  & > h6 {  //h4
     @include font-size(-1);
     background: $gray-bg;
     color: $gray-text;
@@ -167,7 +168,7 @@
  * Heading
  */
 
-.h3-section > h3 {
+:is(.h3-section, .h4-section, .h5-section) > :is(h3,h4,h5) {
   margin-bottom: 16px;
   margin-top: 8px;
   overflow: hidden;

@@ -53,57 +53,6 @@
   }
 }());
 
-/* add .h3-section */
-(function () {
-  const elements = document.querySelectorAll('h3');
-  for (let i = 0; i < elements.length; i++) {
-    const el = elements[i];
-    const wrapper = document.createElement('div');
-    wrapper.setAttribute('class', 'h3-section');
-    const parent = el.parentNode;
-    const childNode = checkNextSibling(el);
-    parent.replaceChild(wrapper, el);
-    wrapper.append(elements[i]);
-    for (let ei = 0; ei < childNode.length; ei++) {
-      wrapper.appendChild(childNode[ei]);
-    }
-  }
-
-  function checkNextSibling(el) {
-    const sibling = el.nextElementSibling;
-    if (sibling && sibling.nodeName != 'H3' && sibling.nodeName != 'H2') {
-      return [sibling].concat(checkNextSibling(sibling));
-    }
-    return [];
-  }
-}());
-
-/* add .h3-section list */
-(function () {
-  const elements = document.querySelectorAll('div .h3-section');
-  for (let i = 0; i < elements.length; i++) {
-    const el = elements[i];
-    const wrapper = document.createElement('div');
-    wrapper.setAttribute('class', 'h3-section-list -three-column');
-    const parent = el.parentNode;
-    const childNode = checkNextSibling(el);
-    parent.replaceChild(wrapper, el);
-    wrapper.append(elements[i]);
-    for (let ei = 0; ei < childNode.length; ei++) {
-      i++;
-      wrapper.appendChild(childNode[ei]);
-    }
-  }
-
-  function checkNextSibling(el) {
-    const sibling = el.nextElementSibling;
-    if (sibling && sibling.classList.value.toString().includes('h3-section')) {
-      return [sibling].concat(checkNextSibling(sibling));
-    }
-    return [];
-  }
-}());
-
 /* add .-headers to table */
 (function () {
   document.querySelectorAll('table').forEach((node) => {
@@ -111,18 +60,86 @@
   });
 }());
 
-/* add .body */
-(function () {
-  const elements = document.querySelectorAll('div .h3-section');
+function handleSection(header) {
+  const elements = document.querySelectorAll(header);
   for (let i = 0; i < elements.length; i++) {
-    const parent = elements[i];
+    const el = elements[i];
     const wrapper = document.createElement('div');
-    wrapper.setAttribute('class', 'body');
-    const childNode = [...parent.childNodes];
-    el = childNode[1];
+    wrapper.setAttribute('class', `${header}-section`);
+    const parent = el.parentNode;
+    const childNode = checkSectionNextSibling(el);
     parent.replaceChild(wrapper, el);
-    for (let ei = 1; ei < childNode.length; ei++) {
+    wrapper.append(elements[i]);
+    for (let ei = 0; ei < childNode.length; ei++) {
       wrapper.appendChild(childNode[ei]);
     }
+  }
+}
+function checkSectionNextSibling(el) {
+  const sibling = el.nextElementSibling;
+  if (sibling && (sibling.nodeName == 'P' || sibling.nodeName == 'PRE'
+    || sibling.nodeName == 'TABLE' || sibling.nodeName == 'UL'
+    || sibling.nodeName == 'OL' || sibling.nodeName == 'H6')) {
+    return [sibling].concat(checkSectionNextSibling(sibling));
+  }
+  return [];
+}
+
+function handleSectionList(header) {
+  const elements = document.querySelectorAll(`div .${header}-section`);
+  for (let i = 0; i < elements.length; i++) {
+    const el = elements[i];
+    const wrapper = document.createElement('div');
+    wrapper.setAttribute('class', 'code-section-list');
+    const parent = el.parentNode;
+    const childNode = checkSectionListNextSibling(el, header);
+    parent.replaceChild(wrapper, el);
+    wrapper.append(elements[i]);
+    for (let ei = 0; ei < childNode.length; ei++) {
+      i++;
+      wrapper.appendChild(childNode[ei]);
+    }
+  }
+}
+
+function checkSectionListNextSibling(el, header) {
+  const sibling = el.nextElementSibling;
+  if (sibling && sibling.classList.value.toString().includes(`${header}-section`)) {
+    return [sibling].concat(checkSectionListNextSibling(sibling, header));
+  }
+  return [];
+}
+
+/* add .hx-section & hx-section-list */
+(function () {
+  for (let i = 3; i < 6; i++) {
+    handleSection(`h${i}`)
+  }
+  for (let i = 3; i < 6; i++) {
+    handleSectionList(`h${i}`)
+  }
+
+}());
+
+// /* add .body */
+(function () {
+  function wrapperBody(elements) {
+    console.log(elements)
+    for (let i = 0; i < elements.length; i++) {
+      const parent = elements[i];
+      const wrapper = document.createElement('div');
+      wrapper.setAttribute('class', 'body');
+      const childNode = [...parent.childNodes];
+      console.log(childNode)
+      el = childNode[1];
+      parent.replaceChild(wrapper, el);
+      for (let ei = 1; ei < childNode.length; ei++) {
+        wrapper.appendChild(childNode[ei]);
+      }
+    }
+  }
+  for (let i = 3; i < 6; i++) {
+    const elements = document.querySelectorAll(`div .h${i}-section`);
+    wrapperBody(elements)
   }
 }());
