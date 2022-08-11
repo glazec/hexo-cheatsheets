@@ -71,3 +71,25 @@ a:hover {
     }
   }
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  margin: 5px 0;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(175, 175, 175, 0.75);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 5px;
+  background-color: rgba(100, 100, 100, 0.85);
+}
