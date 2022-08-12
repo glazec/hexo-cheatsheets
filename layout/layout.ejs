@@ -1,6 +1,11 @@
 <%- partial('_partial/head') %>
 <body>
-    <%- partial('_partial/top-nav', null, {cache: !config.relative_link}) %>
+  <% if(is_home()) {%>
+    <%- partial('_partial/home-nav', null, {cache: !config.relative_link}) %>
+  <% } else { %>
+    <%- partial('_partial/post-nav', null, {cache: !config.relative_link}) %>
+  <% } %> 
+    
   <div id="container">
     <div id="wrap">
       <div class="outer">
