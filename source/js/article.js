@@ -91,6 +91,7 @@ function handleSectionList(header) {
     const el = elements[i];
     const wrapper = document.createElement('div');
     wrapper.setAttribute('class', 'code-section-list');
+    wrapper.setAttribute('columns', `${header}-list`);
     const parent = el.parentNode;
     const childNode = checkSectionListNextSibling(el, header);
     parent.replaceChild(wrapper, el);
@@ -124,15 +125,13 @@ function checkSectionListNextSibling(el, header) {
 // /* add .body */
 (function () {
   function wrapperBody(elements) {
-    console.log("elements", elements)
     for (let i = 0; i < elements.length; i++) {
       const parent = elements[i];
       const wrapper = document.createElement('div');
       wrapper.setAttribute('class', 'body');
       const childNode = [...parent.childNodes];
-      console.log("childNode", childNode)
       el = childNode[1];
-      if(!el) throw new Error("解析 Markdown 格式错误, 请仔细核实语法")
+      if (!el) throw new Error("解析 Markdown 格式错误, 请仔细核实语法")
       parent.replaceChild(wrapper, el);
       for (let ei = 1; ei < childNode.length; ei++) {
         wrapper.appendChild(childNode[ei]);
@@ -144,3 +143,17 @@ function checkSectionListNextSibling(el, header) {
     wrapperBody(elements)
   }
 }());
+
+
+(function () {
+  for (let i = 3; i < 5; i++) {
+    const elem = document.querySelector(`div[columns=h${i}-list]`);
+    const iso = new Isotope(elem, {
+      itemSelector: `.h${i}-section`,
+      transitionDuration: 0,
+      masonry: {
+        horizontalOrder: true
+      }
+    });
+  }
+}())
