@@ -6,3 +6,9 @@
 //   console.log(data.content);
 //   return data;
 // });
+
+hexo.extend.filter.register('before_post_render', function(data){
+  data.content = '## get started\n' + data.content
+  console.log(data)
+  return data;
+});
