@@ -172,6 +172,54 @@
     }
   }
 
+  &>blockquote {
+    margin: 0;
+    & p {
+      margin: 0;
+    }
+    &  a {
+      display: block;
+      text-decoration: none;
+      color: $base-a;
+      border-bottom: 0;
+      box-shadow: none;
+      padding: 16px;
+    }
+  
+    & a:visited {
+      color: $base-a;
+    }
+  
+    & a::before {
+      content: '';
+      @include ion-md-arrow-forward(16px, white);
+      margin-right: 16px;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      border-radius: 50%;
+    }
+  
+    & a,
+    & a:visited {
+      &::before {
+        background-color: $base-a;
+        color: white;
+      }
+    }
+  
+    & a:hover,
+    & a:focus {
+      & {
+        color: $base-a7;
+      }
+  
+      &::before {
+        background-color: $base-a7;
+      }
+    }
+  }
+
   // Line divisions
   &>*:not(:first-child) {
     border-top: solid 1px $line-color;
