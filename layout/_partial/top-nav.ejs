@@ -1,8 +1,10 @@
 <nav class='top-nav' data-js-no-preview role='navigation'>
   <div class='container'>
+    <% if(is_post()) {%> 
       <div class='left'>
         <a class='home back-button' href='<%= config.root %>'></a>
       </div>
+    <% } %> 
 
       <div class='actions'>
           <ul class='page-actions'>
