@@ -48,7 +48,7 @@
   & > ul {
     list-style-type: none;
     margin: 0;
-    padding: 16px;
+    padding: 0;
   }
 
   & > ol {
@@ -60,7 +60,6 @@
   /* Description paragraphs */
   & > pre,
   & > ul,
-  & > ol,
   & > iframe,
   & > table {
     & ~ p,
@@ -195,45 +194,102 @@
  * Variant: Prime
  */
 
-.h3-section.-prime > .body {
-  @media (min-width: 481px) {
-    border-radius: 2px;
-    box-shadow: $shadow6;
-  }
-}
+// .h3-section.-prime > .body {
+//   @media (min-width: 481px) {
+//     border-radius: 2px;
+//     box-shadow: $shadow6;
+//   }
+// }
 
 /*
  * Variant: Also see :\
  */
 
-ul.-also-see.-also-see.-also-see {
-  background: $gray-bg;
-  display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
+// ul.-also-see.-also-see.-also-see {
+//   background: $gray-bg;
+//   display: flex;
+//   flex-wrap: wrap;
+//   list-style-type: none;
 
-  & > li {
-    border-top: solid 1px $dark-line-color;
-    flex: 1 0 20%;
-    padding: 24px;
-    list-style-type: none;
+//   & > li {
+//     border-top: solid 1px $dark-line-color;
+//     flex: 1 0 20%;
+//     padding: 24px;
+//     list-style-type: none;
 
-    & + li {
-      border-left: solid 1px $dark-line-color;
-    }
+//     & + li {
+//       border-left: solid 1px $dark-line-color;
+//     }
+//   }
+
+//   & > li::before {
+//     display: none;
+//   }
+
+//   & > li > a {
+//     @include font-size(1);
+//     display: block;
+//   }
+
+//   & > li > em {
+//     @include font-size(-1);
+//     display: block;
+//   }
+// }
+
+.h3-section {
+  // & > .body > p {
+  //   @include font-size(1);
+  // }
+
+  & > .body > ol > li {
+    padding-left: 16px;
+    position: relative;
   }
 
-  & > li::before {
+  & > .body > ol > li::before {
     display: none;
   }
 
-  & > li > a {
+  // & > .body > ul > li:hover {
+  //   background: rgba($base-b3, 0.1);
+  // }
+
+  & > .body > ol > li > p > a {
     @include font-size(1);
     display: block;
+    font-weight: bold;
+    color: $base-b;
+    // &:visited {
+    //   color: $base-a;
+    // }
   }
 
-  & > li > em {
-    @include font-size(-1);
+  // Cover the full card
+  & > .body > ol > li > p > a::before {
+    content: '';
+    @include ion-md-arrow-forward(24px, $base-a3);
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    margin-top: -12px;
+  }
+  & > .body > ol > li:hover > p > a::before {
+    @include ion-md-arrow-forward(24px, $base-a);
+  }
+
+  & > .body > ol > li > p > a::after {
+    content: '';
+    position: absolute;
     display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  & > .body > ol > li > p em {
+    color: $base-mute;
   }
 }
+
