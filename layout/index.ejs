@@ -1,29 +1,33 @@
 <div class='body-area -slim'>
-    <div class='site-header' role='banner'>
-      <h1>
-        <%= config.title %>
-      </h1>
-      <p>
-        <%= config.subtitle %>
-      </p>
-<div class='pages-list' role='main'>
-    <% site.categories.each(function(category,i){ %>
+  <div class='site-header' role='banner'>
+    <h1>
+      <%= config.title %>
+    </h1>
+    <p>
+      <%= config.subtitle %>
+    </p>
+
+    <div class='pages-list' role='main'>
+      <%- partial('_partial/recommend') %>
+      
+      <% site.categories.each(function(category,i){ %>
         <h2 class='category item' id='ruby' data-js-searchable-header>
-          <span><%= category.name %></span>
+          <span>
+            <%= category.name %>
+          </span>
         </h2>
-  
+
         <% category.posts.each(function(post,j){ %>
-            <a 
-            href="<%- url_for(post.path) %>"
-            class ="article item -item-fitness/phat"
-            >
+          <a href="<%- url_for(post.path) %>" class="article item -item-fitness/phat">
             <span class='info'>
               <code class='slug'><%= post.slug %></code>
-              <span class='title'><%= post.title %></span>
+              <span class='title'>
+                <%= post.title %>
+              </span>
             </span>
           </a>
           <% }) %>
-          <% }) %>
-</div>
+            <% }) %>
     </div>
   </div>
+</div>
