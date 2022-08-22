@@ -1,29 +1,34 @@
-<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope itemprop="blogPost">
+<article id="<%= post.layout %>-<%= post.slug %>" class="article article-type-<%= post.layout %>" itemscope
+  itemprop="blogPost">
   <div class='body-area'>
     <header class='main-heading -center' role='banner'>
-      <h1 class='h1'> <%= post.title %> <em><%= post.version %></em></h1>
+      <h1 class='h1'>
+        <%= post.title %> <em>
+            <%= post.version %>
+          </em>
+      </h1>
     </header>
-  
-  
+
+
     <main class='post-content MarkdownBody' data-js-main-body data-js-anchors role='main'>
       <%- post.content %>
     </main>
   </div>
-  
+
   <div class='pre-footer' data-js-no-preview><i class='icon'></i></div>
-    
+
 </article>
 
 <% if (!index && post.comments && config.disqus_shortname){ %>
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
-<% } %>
+  <section id="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by
+          Disqus.</a></noscript>
+    </div>
+  </section>
+  <% } %>
 
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/prism.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/prismjs@1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
-<%- js(["js/article.js"]) %>
-
-
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <%- js(["js/article.js"]) %>

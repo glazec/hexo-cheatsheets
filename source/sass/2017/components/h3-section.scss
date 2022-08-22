@@ -2,11 +2,11 @@
  * H3 section
  */
 
-.h3-section > .body {
+:is(.h3-section, .h4-section, .h5-section)>.body {
   background: rgb(255, 255, 255);
   box-shadow: $shadow3;
 
-  > pre {
+  >pre {
     margin: 0;
     padding: 16px;
   }
@@ -27,69 +27,79 @@
       border-radius: 2px;
     }
 
-    & > :first-child {
+    &> :first-child {
       border-top-left-radius: 3px;
       border-top-right-radius: 3px;
     }
 
-    & > :last-child {
+    &> :last-child {
       border-bottom-left-radius: 3px;
       border-bottom-right-radius: 3px;
     }
   }
+
   /*
  * Children
  */
   /* Paragraphs */
-  & > p {
+  &>p {
     margin: 0;
     padding: 16px;
-  }
-  & > ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 16px;
-  }
 
-  & > ol {
-    margin: 0;
-    padding: 16px 16px 16px 40px;
-  }
-
-  /* Description paragraphs */
-  & > pre,
-  & > ul,
-  & > ol,
-  & > iframe,
-  & > table {
-    & ~ p,
-    & ~ ul,
-    & ~ ol {
-      background: $gray-bg;
-      color: $gray-text;
-    }
-
-    /* Links */
-    & a,
-    & a:visited {
-      border-bottom: solid 1px $line-color;
+    /* Link */
+    &>a,
+    &>a:visited {
       color: $base-text;
       text-decoration: none;
+      border-bottom: solid 1px $line-color;
     }
 
-    & a:hover {
+    &>a:hover {
       color: $base-b;
     }
   }
 
+  &>ul,
+  &>ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Description paragraphs */
+  &>pre,
+  &>ul,
+  &>iframe,
+  &>table {
+
+    &~p,
+    &~ul,
+    &~ol {
+      background: $gray-bg;
+      color: $gray-text;
+    }
+
+    // /* Links */
+    // & a,
+    // & a:visited {
+    //   // border-bottom: solid 1px $line-color;
+    //   color: $base-text;
+    //   // text-decoration: none;
+    // }
+
+    // & a:hover {
+    //   color: $base-b;
+    // }
+  }
+
   /* Lists */
 
-  & > ol ol,
-  & > ol ul {
+  &>ol ol,
+  &>ol ul {
     padding-inline-start: 16px;
   }
 
-  & > ul > li {
+  &>ul>li {
     padding: 8px;
     padding-left: 32px + 4px;
     position: relative;
@@ -107,45 +117,49 @@
     }
   }
 
-  & > ol > li {
+  &>ol>li {
     padding: 8px;
     padding-left: 10px;
     position: relative;
 
-    & + li {
+    &+li {
       border-top: solid 1px $line-color;
     }
   }
 
-  & > ul > li + li {
+  &>ul>li+li {
     border-top: solid 1px $line-color;
   }
 
-  & > ul > ol,
-  & > ul ul {
+  &>ul>ol,
+  &>ul ul {
     padding-inline-start: 16px;
   }
 
   // Collapse paragraphs together
-  & > p + p {
+  &>p+p {
     border-top: 0;
     margin-top: -1.5em;
   }
-  & > ol > li > p {
+
+  &>ol>li>p {
     margin: 0;
     padding: 0;
   }
-  & > ul > li > p {
+
+  &>ul>li>p {
     margin: 0;
     padding: 0;
   }
-  & > p + p:not(:first-child) {
+
+  &>p+p:not(:first-child) {
     border-top: 0;
     margin-top: -1.5em;
   }
 
   /* Headings in between bodies */
-  & > h4 {
+  &>h6 {
+    //h4
     @include font-size(-1);
     background: $gray-bg;
     color: $gray-text;
@@ -153,21 +167,69 @@
     margin: 0;
     padding: 4px 16px;
 
-    & + * {
+    &+* {
       border-top: solid 1px $line-color;
     }
   }
 
+  &>blockquote {
+    margin: 0;
+    & p {
+      margin: 0;
+    }
+    &  a {
+      display: block;
+      text-decoration: none;
+      color: $base-a;
+      border-bottom: 0;
+      box-shadow: none;
+      padding: 16px;
+    }
+  
+    & a:visited {
+      color: $base-a;
+    }
+  
+    & a::before {
+      content: '';
+      @include ion-md-arrow-forward(16px, white);
+      margin-right: 16px;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      border-radius: 50%;
+    }
+  
+    & a,
+    & a:visited {
+      &::before {
+        background-color: $base-a;
+        color: white;
+      }
+    }
+  
+    & a:hover,
+    & a:focus {
+      & {
+        color: $base-a7;
+      }
+  
+      &::before {
+        background-color: $base-a7;
+      }
+    }
+  }
+
   // Line divisions
-  & > *:not(:first-child) {
+  &>*:not(:first-child) {
     border-top: solid 1px $line-color;
   }
 }
+
 /*
  * Heading
  */
-
-.h3-section > h3 {
+:is(.h3-section, .h4-section, .h5-section)> :is(h3, h4, h5) {
   margin-bottom: 16px;
   margin-top: 8px;
   overflow: hidden;
@@ -194,45 +256,102 @@
  * Variant: Prime
  */
 
-.h3-section.-prime > .body {
-  @media (min-width: 481px) {
-    border-radius: 2px;
-    box-shadow: $shadow6;
-  }
-}
+// .h3-section.-prime > .body {
+//   @media (min-width: 481px) {
+//     border-radius: 2px;
+//     box-shadow: $shadow6;
+//   }
+// }
 
 /*
  * Variant: Also see :\
  */
 
-ul.-also-see.-also-see.-also-see {
-  background: $gray-bg;
-  display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
+// ul.-also-see.-also-see.-also-see {
+//   background: $gray-bg;
+//   display: flex;
+//   flex-wrap: wrap;
+//   list-style-type: none;
 
-  & > li {
-    border-top: solid 1px $dark-line-color;
-    flex: 1 0 20%;
-    padding: 24px;
-    list-style-type: none;
+//   & > li {
+//     border-top: solid 1px $dark-line-color;
+//     flex: 1 0 20%;
+//     padding: 24px;
+//     list-style-type: none;
 
-    & + li {
-      border-left: solid 1px $dark-line-color;
-    }
+//     & + li {
+//       border-left: solid 1px $dark-line-color;
+//     }
+//   }
+
+//   & > li::before {
+//     display: none;
+//   }
+
+//   & > li > a {
+//     @include font-size(1);
+//     display: block;
+//   }
+
+//   & > li > em {
+//     @include font-size(-1);
+//     display: block;
+//   }
+// }
+
+.h3-section {
+  // & > .body > p {
+  //   @include font-size(1);
+  // }
+
+  &>.body>ol>li {
+    padding-left: 16px;
+    position: relative;
   }
 
-  & > li::before {
+  &>.body>ol>li::before {
     display: none;
   }
 
-  & > li > a {
+  // & > .body > ul > li:hover {
+  //   background: rgba($base-b3, 0.1);
+  // }
+
+  &>.body>ol>li>p>a {
     @include font-size(1);
     display: block;
+    font-weight: bold;
+    color: $base-b;
+    // &:visited {
+    //   color: $base-a;
+    // }
   }
 
-  & > li > em {
-    @include font-size(-1);
+  // Cover the full card
+  &>.body>ol>li>p>a::before {
+    content: '';
+    @include ion-md-arrow-forward(24px, $base-a3);
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    margin-top: -12px;
+  }
+
+  &>.body>ol>li:hover>p>a::before {
+    @include ion-md-arrow-forward(24px, $base-a);
+  }
+
+  &>.body>ol>li>p>a::after {
+    content: '';
+    position: absolute;
     display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  &>.body>ol>li>p em {
+    color: $base-mute;
   }
 }

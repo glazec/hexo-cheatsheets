@@ -33,7 +33,7 @@ highlight:
 ### Update
 
 ```bash
-cd themes/landscape
+cd themes/hexo-cheatsheets
 git pull
 ```
 
@@ -43,14 +43,18 @@ git pull
 favicon: "favicon url"
 github: "the link the github button point to"
 githubToolTip: "Text displayed when hovering on the github button"
+recommend:
+  enable: true # whether to open the top
 ```
 
 ## Writing
 
+### Code
+
 when using tht code block in the markdown, please write the language. Otherwise the highlight will not work.
 The following example is correct.(Please **omit** the last dot, thant is a render issue)
 
-```
+```markdown
 ```yml
 favicon: "favicon url"
 github: "the link the github button point to"
@@ -58,5 +62,87 @@ githubToolTip: "Text displayed when hovering on the github button"
 ```·
 ```
 
+### Three Columns
+
+````markdown
+### Three Columns
+
+```bash
+cd themes/hexo-cheatsheets
+git pull
+```
+````
+
+### Two Columns
+
+````markdown
+#### Two Columns
+
+```bash
+cd themes/hexo-cheatsheets
+git pull
+```
+````
+
+### Single Column
+
+````markdown
+##### Single Columns
+
+```bash
+cd themes/hexo-cheatsheets
+git pull
+```
+````
+
+### Secondary Title
+
+````markdown
+### Three Columns
+
+```bash
+cd themes/hexo-cheatsheets
+git pull
+```
+
+###### Secondary Title
+
+```bash
+cd themes/hexo-cheatsheets
+git pull
+```
+````
+
+### Captions & URL
+
+````markdown
+### Three Columns
+
+```bash
+cd themes/hexo-cheatsheets
+git pull
+```
+Hexo [Cheatsheets](https://github.com/glazec/hexo-cheatsheets) Theme 
+
+```bash
+cd themes/hexo-cheatsheets
+git pull
+```
+> [Cheatsheets](https://github.com/glazec/hexo-cheatsheets)
+````
+
+### Introduction List
+
+```markdown
+###  References
+
+1. [Hexo](https://hexo.io/) _(hexo.io)_
+
+2. [Hexo Cheatsheets](https://github.com/glazec/hexo-cheatsheets) _(hexo-cheatsheets)_
+```
+
+> Must be an ordered list !
+
 ## Roadmap
+
 [![IMAGE ALT TEXT HERE](https://www.inevitable.tech/roadmap.png)](https://coda.io/d/User-Feedback_ddjgAWpgIbG)

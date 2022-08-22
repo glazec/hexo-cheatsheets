@@ -1,0 +1,21 @@
+<% 
+  var topPosts=[]; 
+  site.posts.forEach(function (post) { 
+    if (post.top) { 
+      topPosts.push(post); 
+    } 
+  }); 
+  var topPostsCount=topPosts.length; 
+%>
+
+<% for (var i = 0; i < topPostsCount; i++) { %>
+  <% 
+    var post=topPosts[i]; 
+    var grid=(i % 3===0) ? 's12' : 's12 m6' ; 
+  %>
+    <a class="item top-sheet" href="<%- url_for(post.path) %>">
+      <span class="info">
+        <code class="slug"><%= post.slug %></code>
+      </span>
+    </a>
+<% } %>

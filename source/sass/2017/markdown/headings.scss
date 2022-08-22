@@ -15,17 +15,22 @@
   }
 }
 
-.MarkdownBody h3 {
-  @include font-size(2);
-  color: $base-a;
-  font-family: $heading-font;
-  font-weight: 400;
-  margin: 0;
-  margin-bottom: 16px;
-  padding: 0;
+.MarkdownBody {
+  h3,
+  h4,
+  h5 {
+    @include font-size(2);
+    color: $base-a;
+    font-family: $heading-font;
+    font-weight: 400;
+    margin: 0;
+    margin-bottom: 16px;
+    padding: 0;
+  }
 }
 
 .MarkdownBody {
+
   a,
   a:visited {
     color: $base-b;

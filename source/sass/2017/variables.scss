@@ -26,8 +26,8 @@ $monospace-font: cousine, $system-mono;
 $base-body: #f1f3f5;
 $base-panel: white;
 $base-head: #111;
-$base-text: #111;
-$base-mute: #678; // gray
+$base-text: #345;
+$base-mute: #556677; // gray
 $base-code: #111;
 $base-inline-code: #678;
 $base-inline-code-background: #eff0f1; // use in white background
@@ -49,7 +49,7 @@ $body-bg: $base-body;
 $gray-bg: mix($base-body, $base-panel, 50%);
 $gray-text: $base-mute;
 
-$line-color: rgba($base-mute, 0.05);
+$line-color: rgba($base-mute, 0.18);
 $dark-line-color: rgba($base-mute, 0.2);
 
 $base-inline-code-background-dark: adjust-color($base-inline-code-background, $lightness: -1%); // use in darker background
