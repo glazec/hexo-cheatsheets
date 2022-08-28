@@ -9,7 +9,7 @@
 
 const domutils = require('domutils');
 const { parseDOM } = require('htmlparser2');
-const { Element } = require('domhandler');
+const { Element, Text } = require('domhandler');
 const render = require("dom-serializer").default;
 
 
@@ -29,7 +29,7 @@ hexo.extend.filter.register('after_post_render', (data) => {
     if (noHeader) {
       const { attribs } = node
       if (attribs.class) {
-        attribs.class.concat('-header-less')
+        attribs.class = attribs.class.concat('-header-less')
       } else {
         attribs.class = '-header-less'
       }
@@ -37,11 +37,17 @@ hexo.extend.filter.register('after_post_render', (data) => {
   });
 
   // wrapper h2-section
-  const h2s = domutils.findAll((el) => el.name === 'h2', dom);
+  const h2Sections = domutils.findAll((el) => el.name === 'h2', dom);
   dom = []
-  for (let i = 0; i < h2s.length; i++) {
+  for (let i = 0; i < h2Sections.length; i++) {
     const wrapper = new Element('div', { class: 'h2-section' });
-    let h2 = h2s[i], h2_section = h2;
+    let h2 = h2Sections[i], h2Section = h2;
+
+    // add # to h2>a
+    const a = h2.children[0]
+    a.children.push(new Text('#'))
+    a.attribs.class = a.attribs.class.concat(" local-anchor anchor")
+
     domutils.appendChild(wrapper, h2.cloneNode(true));
     while (h2?.next) {
       h2 = h2.next;
@@ -55,7 +61,7 @@ hexo.extend.filter.register('after_post_render', (data) => {
       }
     }
     dom.push(wrapper)
-    domutils.prepend(h2_section, wrapper)
+    domutils.prepend(h2Section, wrapper)
   }
   // wrapper hx-section && wrapper body
   for (let i = 3; i < 6; i++) {
@@ -76,23 +82,25 @@ hexo.extend.filter.register('after_post_render', (data) => {
   // wrapper code-section-list 
   const h2Lists = domutils.findAll(el => el.name === 'div'
     && el.attribs.class === "h2-section", dom);
-  for (const h2Section of h2Lists) {
-    for (let i = 3; i < 6; i++) {
-      const sections = h2Section.children
-        .filter(node => node.attribs?.class === `h${i}-section`)
-      for (let j = 0; j < sections.length; j++) {
-        const item = sections[j]
-        const wrapper = new Element('div', { class: 'code-section-list' });
-        const childNode = checkSectionListNextSibling(item, `h${i}-section`);
-        domutils.appendChild(wrapper, item.cloneNode(true))
-        domutils.replaceElement(item, wrapper)
-        for (let e = 0; e < childNode.length; e++) {
-          j++;
-          domutils.appendChild(wrapper, childNode[e]);
+    for (const h2Section of h2Lists) {
+      for (let i = 3; i < 6; i++) {
+        const sections = h2Section.children
+          .filter(node => node.attribs?.class === `h${i}-section`)
+        for (let j = 0; j < sections.length; j++) {
+          const item = sections[j]
+          const wrapper = new Element('div', { class: 'code-section-list' });
+          // specify the Isotope attrib
+          wrapper.attribs['data-isotope'] = `{"itemSelector":".h${i}-section","masonry":{"horizontalOrder":true},"transitionDuration":0}`
+          const childNode = checkSectionListNextSibling(item, `h${i}-section`);
+          domutils.appendChild(wrapper, item.cloneNode(true))
+          domutils.replaceElement(item, wrapper)
+          for (let e = 0; e < childNode.length; e++) {
+            j++;
+            domutils.appendChild(wrapper, childNode[e]);
+          }
         }
       }
     }
-  }
 
   data.content = render(dom)
   return data;
