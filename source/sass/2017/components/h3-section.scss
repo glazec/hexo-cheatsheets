@@ -38,13 +38,12 @@
     }
   }
 
-  /*
- * Children
- */
   /* Paragraphs */
   &>p {
     margin: 0;
     padding: 16px;
+    background: $gray-bg;
+    color: $base-text;
 
     /* Link */
     &>a,
@@ -119,17 +118,93 @@
 
   &>ol>li {
     padding: 8px;
-    padding-left: 10px;
+    padding-left: 16px;
     position: relative;
 
+    &>p em {
+      color: $base-mute;
+    }
     &+li {
       border-top: solid 1px $line-color;
     }
+    &>p>a {
+      @include font-size(1);
+      display: block;
+      font-weight: bold;
+      color: $base-b;
+      // &:visited {
+      //   color: $base-a;
+      // }
+      &::before {
+        content: '';
+        @include ion-md-arrow-forward(24px, $base-a3);
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        margin-top: -12px;
+      }
+    }
+    &::before {
+      display: none;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+    &:hover>p>a::before {
+      @include ion-md-arrow-forward(24px, $base-a);
+    }
   }
 
-  &>ul>li+li {
-    border-top: solid 1px $line-color;
-  }
+  // &>ol>li::before {
+  //   display: none;
+  // }
+
+  // &>ol>li>p>a {
+  //   @include font-size(1);
+  //   display: block;
+  //   font-weight: bold;
+  //   color: $base-b;
+  //   // &:visited {
+  //   //   color: $base-a;
+  //   // }
+  // }
+
+  // &>ol>li>p>a::before {
+  //   content: '';
+  //   @include ion-md-arrow-forward(24px, $base-a3);
+  //   position: absolute;
+  //   right: 16px;
+  //   top: 50%;
+  //   margin-top: -12px;
+  // }
+  
+  // &>ol>li:hover>p>a::before {
+  //   @include ion-md-arrow-forward(24px, $base-a);
+  // }
+
+  // &>ol>li>p>a::after {
+  //   content: '';
+  //   position: absolute;
+  //   display: block;
+  //   top: 0;
+  //   left: 0;
+  //   bottom: 0;
+  //   right: 0;
+  // }
+
+  // &>ol>li>p em {
+  //   color: $base-mute;
+  // }
+
+  // &>ul>li+li {
+  //   border-top: solid 1px $line-color;
+  // }
 
   &>ul>ol,
   &>ul ul {
@@ -298,60 +373,3 @@
 //     display: block;
 //   }
 // }
-
-.h3-section {
-  // & > .body > p {
-  //   @include font-size(1);
-  // }
-
-  &>.body>ol>li {
-    padding-left: 16px;
-    position: relative;
-  }
-
-  &>.body>ol>li::before {
-    display: none;
-  }
-
-  // & > .body > ul > li:hover {
-  //   background: rgba($base-b3, 0.1);
-  // }
-
-  &>.body>ol>li>p>a {
-    @include font-size(1);
-    display: block;
-    font-weight: bold;
-    color: $base-b;
-    // &:visited {
-    //   color: $base-a;
-    // }
-  }
-
-  // Cover the full card
-  &>.body>ol>li>p>a::before {
-    content: '';
-    @include ion-md-arrow-forward(24px, $base-a3);
-    position: absolute;
-    right: 16px;
-    top: 50%;
-    margin-top: -12px;
-  }
-
-  &>.body>ol>li:hover>p>a::before {
-    @include ion-md-arrow-forward(24px, $base-a);
-  }
-
-  &>.body>ol>li>p>a::after {
-    content: '';
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-  }
-
-  &>.body>ol>li>p em {
-    color: $base-mute;
-  }
-}

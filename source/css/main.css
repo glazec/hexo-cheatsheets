@@ -1329,9 +1329,6 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
   box-shadow: 0 6px 8px rgba(85, 102, 119, 0.03), 0 1px 2px rgba(85, 102, 119, 0.3);
   /* Collapse/flush */
   /* Border radius */
-  /*
- * Children
- */
   /* Paragraphs */
   /* Description paragraphs */
   /* Lists */
@@ -1358,6 +1355,8 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
   :is(.h3-section, .h4-section, .h5-section) > .body > p {
     margin: 0;
     padding: 16px;
+    background: #f8f9fa;
+    color: #345;
     /* Link */ }
     :is(.h3-section, .h4-section, .h5-section) > .body > p > a,
     :is(.h3-section, .h4-section, .h5-section) > .body > p > a:visited {
@@ -1404,12 +1403,53 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
       width: 4px; }
   :is(.h3-section, .h4-section, .h5-section) > .body > ol > li {
     padding: 8px;
-    padding-left: 10px;
+    padding-left: 16px;
     position: relative; }
+    :is(.h3-section, .h4-section, .h5-section) > .body > ol > li > p em {
+      color: #556677; }
     :is(.h3-section, .h4-section, .h5-section) > .body > ol > li + li {
       border-top: solid 1px rgba(85, 102, 119, 0.18); }
-  :is(.h3-section, .h4-section, .h5-section) > .body > ul > li + li {
-    border-top: solid 1px rgba(85, 102, 119, 0.18); }
+    :is(.h3-section, .h4-section, .h5-section) > .body > ol > li > p > a {
+      font-size: 15px;
+      display: block;
+      font-weight: bold;
+      color: #26648e; }
+      @media (min-width: 480px) and (max-width: 768px) {
+        :is(.h3-section, .h4-section, .h5-section) > .body > ol > li > p > a {
+          font-size: calc( 15px + 1 * ( ( 100vw - 480px) / 288 )); } }
+      @media (min-width: 768px) and (max-width: 1280px) {
+        :is(.h3-section, .h4-section, .h5-section) > .body > ol > li > p > a {
+          font-size: calc( 16px + 0 * ( ( 100vw - 768px) / 512 )); } }
+      @media (min-width: 1280px) {
+        :is(.h3-section, .h4-section, .h5-section) > .body > ol > li > p > a {
+          font-size: 16px; } }
+      :is(.h3-section, .h4-section, .h5-section) > .body > ol > li > p > a::before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        background: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22512%22%20height%3D%22512%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20fill%3D%22rgb(150.38421%2C155.2614%2C206.71579)%22%20d%3D%22M85%20277.375h259.704L225.002%20397.077%20256%20427l171-171L256%2085l-29.922%2029.924%20118.626%20119.7H85v42.75z%22%2F%3E%3C%2Fsvg%3E") center center/24px 24px no-repeat;
+        height: 24px;
+        width: 24px;
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        margin-top: -12px; }
+    :is(.h3-section, .h4-section, .h5-section) > .body > ol > li::before {
+      display: none; }
+    :is(.h3-section, .h4-section, .h5-section) > .body > ol > li::after {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0; }
+    :is(.h3-section, .h4-section, .h5-section) > .body > ol > li:hover > p > a::before {
+      display: inline-block;
+      vertical-align: middle;
+      background: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22512%22%20height%3D%22512%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20fill%3D%22rgb(115.87081%2C94.55263%2C180.94737)%22%20d%3D%22M85%20277.375h259.704L225.002%20397.077%20256%20427l171-171L256%2085l-29.922%2029.924%20118.626%20119.7H85v42.75z%22%2F%3E%3C%2Fsvg%3E") center center/24px 24px no-repeat;
+      height: 24px;
+      width: 24px; }
   :is(.h3-section, .h4-section, .h5-section) > .body > ul > ol,
   :is(.h3-section, .h4-section, .h5-section) > .body > ul ul {
     padding-inline-start: 16px; }
@@ -1507,59 +1547,6 @@ html.WithJs.LoadDone .pages-list, html.WithJs.LoadDone
 /*
  * Variant: Also see :\
  */
-.h3-section > .body > ol > li {
-  padding-left: 16px;
-  position: relative; }
-
-.h3-section > .body > ol > li::before {
-  display: none; }
-
-.h3-section > .body > ol > li > p > a {
-  font-size: 15px;
-  display: block;
-  font-weight: bold;
-  color: #26648e; }
-  @media (min-width: 480px) and (max-width: 768px) {
-    .h3-section > .body > ol > li > p > a {
-      font-size: calc( 15px + 1 * ( ( 100vw - 480px) / 288 )); } }
-  @media (min-width: 768px) and (max-width: 1280px) {
-    .h3-section > .body > ol > li > p > a {
-      font-size: calc( 16px + 0 * ( ( 100vw - 768px) / 512 )); } }
-  @media (min-width: 1280px) {
-    .h3-section > .body > ol > li > p > a {
-      font-size: 16px; } }
-
-.h3-section > .body > ol > li > p > a::before {
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  background: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22512%22%20height%3D%22512%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20fill%3D%22rgb(150.38421%2C155.2614%2C206.71579)%22%20d%3D%22M85%20277.375h259.704L225.002%20397.077%20256%20427l171-171L256%2085l-29.922%2029.924%20118.626%20119.7H85v42.75z%22%2F%3E%3C%2Fsvg%3E") center center/24px 24px no-repeat;
-  height: 24px;
-  width: 24px;
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  margin-top: -12px; }
-
-.h3-section > .body > ol > li:hover > p > a::before {
-  display: inline-block;
-  vertical-align: middle;
-  background: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22512%22%20height%3D%22512%22%20viewBox%3D%220%200%20512%20512%22%3E%3Cpath%20fill%3D%22rgb(115.87081%2C94.55263%2C180.94737)%22%20d%3D%22M85%20277.375h259.704L225.002%20397.077%20256%20427l171-171L256%2085l-29.922%2029.924%20118.626%20119.7H85v42.75z%22%2F%3E%3C%2Fsvg%3E") center center/24px 24px no-repeat;
-  height: 24px;
-  width: 24px; }
-
-.h3-section > .body > ol > li > p > a::after {
-  content: '';
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0; }
-
-.h3-section > .body > ol > li > p em {
-  color: #556677; }
-
 /*
  * H3 section list:
  * The body that is isotoped.
