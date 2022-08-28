@@ -8,8 +8,8 @@
  */
 
 const domutils = require('domutils');
-const { parseDOM, } = require('htmlparser2');
-const { Element } = require('domhandler/lib/node');
+const { parseDOM } = require('htmlparser2');
+const { Element } = require('domhandler');
 const render = require("dom-serializer").default;
 
 
@@ -21,6 +21,20 @@ hexo.extend.filter.register('before_post_render', (data) => {
 hexo.extend.filter.register('after_post_render', (data) => {
 
   let dom = parseDOM(data.content);
+
+  const tables = domutils.findAll((el) => el.name === 'table', dom);
+  tables.forEach((node) => {
+    const th = domutils.findAll((el) => el.name === 'th', node.children);
+    const noHeader = th.filter(item => item.children.length !== 0).length === 0
+    if (noHeader) {
+      const { attribs } = node
+      if (attribs.class) {
+        attribs.class.concat('-header-less')
+      } else {
+        attribs.class = '-header-less'
+      }
+    }
+  });
 
   // wrapper h2-section
   const h2s = domutils.findAll((el) => el.name === 'h2', dom);
@@ -84,7 +98,7 @@ hexo.extend.filter.register('after_post_render', (data) => {
   return data;
 });
 
-function checkSectionNextSibling(node){
+function checkSectionNextSibling(node) {
   const sibling = node.next;
   // sibling.data: Text node
   if (sibling && (sibling.data || sibling.name == 'p' || sibling.name == 'pre'

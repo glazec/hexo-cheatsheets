@@ -59,9 +59,9 @@
     color: $gray-text;
     font-style: normal;
   }
-
   & thead {
-    display: none;
+    border-bottom: solid 1px $dark-line-color;
+    display: table-header-group;
   }
 
   & thead th {
@@ -97,10 +97,9 @@
   @include table-align-left;
 }
 
-.MarkdownBody table.-headers {
+.MarkdownBody table.-header-less {
   & thead {
-    border-bottom: solid 1px $dark-line-color;
-    display: table-header-group;
+    display: none;
   }
 }
 

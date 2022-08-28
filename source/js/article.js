@@ -54,11 +54,11 @@
 }());
 
 /* add .-headers to table */
-(function () {
-  document.querySelectorAll('table').forEach((node) => {
-    node.classList.add('-headers');
-  });
-}());
+// (function () {
+//   document.querySelectorAll('table').forEach((node) => {
+//     node.classList.add('-headers');
+//   });
+// }());
 
 function handleSection(header) {
   const elements = document.querySelectorAll(header);
@@ -114,35 +114,35 @@ function checkSectionListNextSibling(el, header) {
 /* add .hx-section & hx-section-list */
 (function () {
   for (let i = 3; i < 6; i++) {
-    handleSection(`h${i}`)
+    // handleSection(`h${i}`)
   }
   for (let i = 3; i < 6; i++) {
-    handleSectionList(`h${i}`)
+    // handleSectionList(`h${i}`)
   }
 
 }());
 
 // /* add .body */
-(function () {
-  function wrapperBody(elements) {
-    for (let i = 0; i < elements.length; i++) {
-      const parent = elements[i];
-      const wrapper = document.createElement('div');
-      wrapper.setAttribute('class', 'body');
-      const childNode = [...parent.childNodes];
-      el = childNode[1];
-      if (!el) throw new Error("解析 Markdown 格式错误, 请仔细核实语法")
-      parent.replaceChild(wrapper, el);
-      for (let ei = 1; ei < childNode.length; ei++) {
-        wrapper.appendChild(childNode[ei]);
-      }
-    }
-  }
-  for (let i = 3; i < 6; i++) {
-    const elements = document.querySelectorAll(`div .h${i}-section`);
-    wrapperBody(elements)
-  }
-}());
+// (function () {
+//   function wrapperBody(elements) {
+//     for (let i = 0; i < elements.length; i++) {
+//       const parent = elements[i];
+//       const wrapper = document.createElement('div');
+//       wrapper.setAttribute('class', 'body');
+//       const childNode = [...parent.childNodes];
+//       const el = childNode[1];
+//       if (!el) throw new Error("解析 Markdown 格式错误, 请仔细核实语法")
+//       parent.replaceChild(wrapper, el);
+//       for (let ei = 1; ei < childNode.length; ei++) {
+//         wrapper.appendChild(childNode[ei]);
+//       }
+//     }
+//   }
+//   for (let i = 3; i < 6; i++) {
+//     const elements = document.querySelectorAll(`div .h${i}-section`);
+//     wrapperBody(elements)
+//   }
+// }());
 
 
 (function () {
