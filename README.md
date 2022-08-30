@@ -143,6 +143,24 @@ git pull
 
 > Must be an ordered list !
 
+### Table & Headless Table 
+
+```markdown
+### Table
+
+| Shortcut | Description         |
+| -------- | ------------------- |
+| `⌘\`     | Toggle tree         |
+| `⌘⇧\`    | Reveal current file |
+
+### Headless Table
+
+|          |                     |
+| -------- | ------------------- |
+| `⌘\`     | Toggle tree         |
+| `⌘⇧\`    | Reveal current file |
+```
+
 ## Roadmap
 
 [![IMAGE ALT TEXT HERE](https://www.inevitable.tech/roadmap.png)](https://coda.io/d/User-Feedback_ddjgAWpgIbG)
